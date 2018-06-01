@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../static/css/materialize.min.css" th:href="@{/css/materialize.min.css}" rel="stylesheet" media="screen"/>
+    <link href="../../static/css/style.css" th:href="@{css/style.css}" rel="stylesheet" media="screen"/>
+</head>
+
+<body>
+    <div th:fragment="header">
+        <nav>
+            <div class="nav-wrapper">
+                <a class="brand-logo" href="#" th:href="@{/}">WeatherApp</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#" th:href="@{/cities}">Cities</a></li>
+                    <li><a href="#" th:href="@{/city/new}">Add new city</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="jumbotron">
+            <h1>Weather App</h1>
+            <h2>Add your favorite city to weather panel. Simple and fast tool to check weather.</h2>
+
+        </div>
+
+</div>
+</body>
+</html>
