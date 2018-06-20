@@ -1,57 +1,1569 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:td="http://www.tdymeleaf.org">
 <head lang="en">
 
     <title>Weather app - dodaj miasto</title>
 
-    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+    <!--/*/ <td:block td:include="fragments/headerinc :: head"></td:block> /*/-->
 </head>
 <body>
 
-<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+<!--/*/ <td:block td:include="fragments/header :: header"></td:block> /*/-->
 
 <div class="container">
 
-    <h2>Product Details</h2>
+    <h2>Dodaj Miasto</h2>
     <div>
-        <form class="form-horizontal" th:object="${city}" th:action="@{/city}" method="post">
-            <input type="hidden" th:field="*{id}"/>
+        <form class="form-horizontal" td:object="${city}" td:action="@{/city}" metdod="post">
+            <input type="hidden" td:field="*{id}"/>
             <div class="form-group">
                 <label class="col-sm-2 control-label">City Id:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" th:field="*{cityId}"/>
+                    <input type="text" class="form-control" td:field="*{cityId}"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">City Name:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" th:field="*{cityName}"/>
+                    <input type="text" class="form-control" td:field="*{cityName}"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">Country Code:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" th:field="*{countryCode}"/>
+                    <input type="text" class="form-control" td:field="*{countryCode}"/>
                 </div>
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
                 <label class="col-sm-2 control-label">City Lat Coordinates:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" th:field="*{cityLat}"/>
+                    <input type="text" class="form-control" td:field="*{cityLat}"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">City Lat Coordinates::</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" th:field="*{cityLon}"/>
+                    <input type="text" class="form-control" td:field="*{cityLon}"/>
                 </div>
-            </div>
+            </div>-->
             <div class="row">
                 <button type="submit" class="btn btn-default">Zapisz</button>
             </div>
         </form>
     </div>
+
+
+    <h2> Lista miast w Polsce</h2>
+
+    <div class="col s12 m6">
+        <div class="input-field">
+            <input id="myInput" type="text"/>
+            <label for="myInput">Wyszukaj</label>
+
+        </div>
+    </div>
+
+    <table class="striped" id="myTable">
+    <tdead>
+    <tr>
+        <th>Id</th>
+        <th>Nazwa</th>
+        <th>Kraj</th>
+    </tr>
+    </tdead>
+    <tbody id="tableBody">
+    <tr><td>        763534	 </td><td>Nowy Sacz	</td><td>PL</td></tr>
+    <tr><td>        770293	 </td><td>Jaslo	</td><td>PL</td></tr>
+    <tr><td>        773380	 </td><td>Debica	</td><td>PL</td></tr>
+    <tr><td>        766332	 </td><td>Lezajsk	</td><td>PL</td></tr>
+    <tr><td>        758252	 </td><td>Staszow	</td><td>PL</td></tr>
+    <tr><td>        758445	 </td><td>Stalowa Wola	</td><td>PL</td></tr>
+    <tr><td>        3096576 </td><td>	Karpacz	</td><td>PL</td></tr>
+    <tr><td>        769250	 </td><td>Kielce	</td><td>PL</td></tr>
+    <tr><td>        757886	 </td><td>Suchedniow	</td><td>PL</td></tr>
+    <tr><td>        3083788 </td><td>	Szczercow	</td><td>PL</td></tr>
+    <tr><td>        760778	 </td><td>Radom	</td><td>PL</td></tr>
+    <tr><td>        762199	 </td><td>Pionki	</td><td>PL</td></tr>
+    <tr><td>        767814	 </td><td>Kozienice	</td><td>PL</td></tr>
+    <tr><td>        3093133 </td><td>	Lodz	</td><td>PL</td></tr>
+    <tr><td>        770706	 </td><td>Jablonna	</td><td>PL</td></tr>
+    <tr><td>        3101675 </td><td>	Chojna	</td><td>PL</td></tr>
+    <tr><td>        3098218 </td><td>	Grudziadz	</td><td>PL</td></tr>
+    <tr><td>        3101672 </td><td>	Chojnice	</td><td>PL</td></tr>
+    <tr><td>        764312	 </td><td>Mragowo	</td><td>PL</td></tr>
+    <tr><td>        3094086 </td><td>	Kwidzyn	</td><td>PL</td></tr>
+    <tr><td>        770157	 </td><td>Jedrzejow	</td><td>PL</td></tr>
+    <tr><td>        3102679 </td><td>	Branice	</td><td>PL</td></tr>
+    <tr><td>        764241	 </td><td>Muszyna	</td><td>PL</td></tr>
+    <tr><td>        3088161 </td><td>	Prabuty	</td><td>PL</td></tr>
+    <tr><td>        756135	 </td><td>Warsaw	</td><td>PL</td></tr>
+    <tr><td>        3099434 </td><td>	Gdansk	</td><td>PL</td></tr>
+    <tr><td>        759734	 </td><td>Rzeszow	</td><td>PL</td></tr>
+    <tr><td>        771804	 </td><td>Gorlice	</td><td>PL</td></tr>
+    <tr><td>        3082751 </td><td>	Ustron	</td><td>PL</td></tr>
+    <tr><td>        3103402 </td><td>	Bielsko-Biala	</td><td>PL</td></tr>
+    <tr><td>        3096053 </td><td>	Klodzko	</td><td>PL</td></tr>
+    <tr><td>        3094802 </td><td>	Krakow	</td><td>PL</td></tr>
+    <tr><td>        757026	 </td><td>Tarnow	</td><td>PL</td></tr>
+    <tr><td>        3093524 </td><td>	Leszno	</td><td>PL</td></tr>
+    <tr><td>        3083271 </td><td>	Torun	</td><td>PL</td></tr>
+    <tr><td>        3099759 </td><td>	Elblag	</td><td>PL</td></tr>
+    <tr><td>        3081368 </td><td>	Wroclaw	</td><td>PL</td></tr>
+    <tr><td>        3098722 </td><td>	Gorzow Wielkopolski	</td><td>PL</td></tr>
+    <tr><td>        768785	 </td><td>Kolno	</td><td>PL</td></tr>
+    <tr><td>        765876	 </td><td>Lublin	</td><td>PL</td></tr>
+    <tr><td>        761218	 </td><td>Przasnysz	</td><td>PL</td></tr>
+    <tr><td>        3099230 </td><td>	Gliwice	</td><td>PL</td></tr>
+    <tr><td>        3093692 </td><td>	Legnica	</td><td>PL</td></tr>
+    <tr><td>        757357	 </td><td>Szczytno	</td><td>PL</td></tr>
+    <tr><td>        3099424 </td><td>	Gdynia	</td><td>PL</td></tr>
+    <tr><td>        763166	 </td><td>Olsztyn	</td><td>PL</td></tr>
+    <tr><td>        3088825 </td><td>	Plock	</td><td>PL</td></tr>
+    <tr><td>        3090048 </td><td>	Opole	</td><td>PL</td></tr>
+    <tr><td>        3083829 </td><td>	Szczecin	</td><td>PL</td></tr>
+    <tr><td>        3095321 </td><td>	Konin	</td><td>PL</td></tr>
+    <tr><td>        3089684 </td><td>	Ostrow Wielkopolski	</td><td>PL</td></tr>
+    <tr><td>        3093785 </td><td>	Laziska Gorne	</td><td>PL</td></tr>
+    <tr><td>        3100946 </td><td>	Czestochowa	</td><td>PL</td></tr>
+    <tr><td>        3101076 </td><td>	Czechowice-Dziedzice	</td><td>PL</td></tr>
+    <tr><td>        3088135 </td><td>	Praszka	</td><td>PL</td></tr>
+    <tr><td>        3096372 </td><td>	Kedzierzyn-Kozle	</td><td>PL</td></tr>
+    <tr><td>        3091256 </td><td>	Myslenice	</td><td>PL</td></tr>
+    <tr><td>        3085450 </td><td>	Slupsk	</td><td>PL</td></tr>
+    <tr><td>        3080644 </td><td>	Zary	</td><td>PL</td></tr>
+    <tr><td>        3080985 </td><td>	Zabrze	</td><td>PL</td></tr>
+    <tr><td>        3080866 </td><td>	Zakopane	</td><td>PL</td></tr>
+    <tr><td>        3097257 </td><td>	Jelenia Gora	</td><td>PL</td></tr>
+    <tr><td>        775758	 </td><td>Bochnia	</td><td>PL</td></tr>
+    <tr><td>        766810	 </td><td>Lancut	</td><td>PL</td></tr>
+    <tr><td>        3093066 </td><td>	Lowicz	</td><td>PL</td></tr>
+    <tr><td>        3085151 </td><td>	Sopot	</td><td>PL</td></tr>
+    <tr><td>        757718	 </td><td>Suwalki	</td><td>PL</td></tr>
+    <tr><td>        776175	 </td><td>Biala Podlaska	</td><td>PL</td></tr>
+    <tr><td>        767470	 </td><td>Krosno	</td><td>PL</td></tr>
+    <tr><td>        3080165 </td><td>	Zielona Gora	</td><td>PL</td></tr>
+    <tr><td>        3102987 </td><td>	Boleslawiec	</td><td>PL</td></tr>
+    <tr><td>        3104115 </td><td>	Andrychow	</td><td>PL</td></tr>
+    <tr><td>        764849	 </td><td>Mielec	</td><td>PL</td></tr>
+    <tr><td>        3095795 </td><td>	Kolobrzeg	</td><td>PL</td></tr>
+    <tr><td>        3082734 </td><td>	Wabrzezno	</td><td>PL</td></tr>
+    <tr><td>        774208	 </td><td>Ciechanow	</td><td>PL</td></tr>
+    <tr><td>        3101943 </td><td>	Bytow	</td><td>PL</td></tr>
+    <tr><td>        3090146 </td><td>	Olkusz	</td><td>PL</td></tr>
+    <tr><td>        3082722 </td><td>	Wadowice	</td><td>PL</td></tr>
+    <tr><td>        3085978 </td><td>	Sieradz	</td><td>PL</td></tr>
+    <tr><td>        3094625 </td><td>	Krotoszyn	</td><td>PL</td></tr>
+    <tr><td>        3082707 </td><td>	Walbrzych	</td><td>PL</td></tr>
+    <tr><td>        775183	 </td><td>Brzesko	</td><td>PL</td></tr>
+    <tr><td>        3099828 </td><td>	Dzierzoniow	</td><td>PL</td></tr>
+    <tr><td>        3088972 </td><td>	Piotrkow Trybunalski	</td><td>PL</td></tr>
+    <tr><td>        3089578 </td><td>	Pabianice	</td><td>PL</td></tr>
+    <tr><td>        770169	 </td><td>Jedlicze	</td><td>PL</td></tr>
+    <tr><td>        3096328 </td><td>	Kety	</td><td>PL</td></tr>
+    <tr><td>        3089033 </td><td>	Pila	</td><td>PL</td></tr>
+    <tr><td>        757033	 </td><td>Tarnobrzeg	</td><td>PL</td></tr>
+    <tr><td>        3084840 </td><td>	Stargard Szczecinski	</td><td>PL</td></tr>
+    <tr><td>        763523	 </td><td>Nowy Targ	</td><td>PL</td></tr>
+    <tr><td>        3095971 </td><td>	Knurow	</td><td>PL</td></tr>
+    <tr><td>        3083426 </td><td>	Tczew	</td><td>PL</td></tr>
+    <tr><td>        3103556 </td><td>	Bialogard	</td><td>PL</td></tr>
+    <tr><td>        3083955 </td><td>	Swinoujscie	</td><td>PL</td></tr>
+    <tr><td>        3092082 </td><td>	Miasteczko Slaskie	</td><td>PL</td></tr>
+    <tr><td>        3101619 </td><td>	Chorzow	</td><td>PL</td></tr>
+    <tr><td>        762850	 </td><td>Ostrow Mazowiecka	</td><td>PL</td></tr>
+    <tr><td>        759591	 </td><td>Sanok	</td><td>PL</td></tr>
+    <tr><td>        3102444 </td><td>	Brzeszcze	</td><td>PL</td></tr>
+    <tr><td>        759852	 </td><td>Ryki	</td><td>PL</td></tr>
+    <tr><td>        3087584 </td><td>	Raciborz	</td><td>PL</td></tr>
+    <tr><td>        766555	 </td><td>Legionowo	</td><td>PL</td></tr>
+    <tr><td>        3084093 </td><td>	Swidnica	</td><td>PL</td></tr>
+    <tr><td>        3097872 </td><td>	Inowroclaw	</td><td>PL</td></tr>
+    <tr><td>        3090158 </td><td>	Olesno	</td><td>PL</td></tr>
+    <tr><td>        3092931 </td><td>	Lubin	</td><td>PL</td></tr>
+    <tr><td>        764269	 </td><td>Mszczonow	</td><td>PL</td></tr>
+    <tr><td>        3103096 </td><td>	Bogatynia	</td><td>PL</td></tr>
+    <tr><td>        3080004 </td><td>	Zory	</td><td>PL</td></tr>
+    <tr><td>        771506	 </td><td>Grajewo	</td><td>PL</td></tr>
+    <tr><td>        3083826 </td><td>	Szczecinek	</td><td>PL</td></tr>
+    <tr><td>        758282	 </td><td>Stary Sacz	</td><td>PL</td></tr>
+    <tr><td>        3098200 </td><td>	Gryfino	</td><td>PL</td></tr>
+    <tr><td>        3087743 </td><td>	Psary	</td><td>PL</td></tr>
+    <tr><td>        3089566 </td><td>	Paczkow	</td><td>PL</td></tr>
+    <tr><td>        3098625 </td><td>	Gostyn	</td><td>PL</td></tr>
+    <tr><td>        3082756 </td><td>	Ustka	</td><td>PL</td></tr>
+    <tr><td>        774747	 </td><td>Busko-Zdroj	</td><td>PL</td></tr>
+    <tr><td>        772195	 </td><td>Gizycko	</td><td>PL</td></tr>
+    <tr><td>        759123	 </td><td>Skierniewice	</td><td>PL</td></tr>
+    <tr><td>        759603	 </td><td>Sandomierz	</td><td>PL</td></tr>
+    <tr><td>        3087628 </td><td>	Pyskowice	</td><td>PL</td></tr>
+    <tr><td>        3090205 </td><td>	Olawa	</td><td>PL</td></tr>
+    <tr><td>        3084074 </td><td>	Swiecie	</td><td>PL</td></tr>
+    <tr><td>        758682	 </td><td>Sochaczew	</td><td>PL</td></tr>
+    <tr><td>        3087497 </td><td>	Radomsko	</td><td>PL</td></tr>
+    <tr><td>        776597	 </td><td>Augustow	</td><td>PL</td></tr>
+    <tr><td>        3084130 </td><td>	Swarzedz	</td><td>PL</td></tr>
+    <tr><td>        3090764 </td><td>	Nowa Sol	</td><td>PL</td></tr>
+    <tr><td>        762423	 </td><td>Piaseczno	</td><td>PL</td></tr>
+    <tr><td>        3091523 </td><td>	Mogilno	</td><td>PL</td></tr>
+    <tr><td>        771158	 </td><td>Hajnowka	</td><td>PL</td></tr>
+    <tr><td>        3080102 </td><td>	Zlocieniec	</td><td>PL</td></tr>
+    <tr><td>        3101547 </td><td>	Chrzanow	</td><td>PL</td></tr>
+    <tr><td>        3102627 </td><td>	Brodnica	</td><td>PL</td></tr>
+    <tr><td>        763783	 </td><td>Nowa Deba	</td><td>PL</td></tr>
+    <tr><td>        3080414 </td><td>	Zdunska Wola	</td><td>PL</td></tr>
+    <tr><td>        3093902 </td><td>	Lask	</td><td>PL</td></tr>
+    <tr><td>        3082197 </td><td>	Wielun	</td><td>PL</td></tr>
+    <tr><td>        3083145 </td><td>	Trzebiatow	</td><td>PL</td></tr>
+    <tr><td>        3095126 </td><td>	Koscierzyna	</td><td>PL</td></tr>
+    <tr><td>        3092906 </td><td>	Lubliniec	</td><td>PL</td></tr>
+    <tr><td>        3081677 </td><td>	Wodzislaw Slaski	</td><td>PL</td></tr>
+    <tr><td>        3095057 </td><td>	Kostrzyn nad Odra	</td><td>PL</td></tr>
+    <tr><td>        754454	 </td><td>Wyszkow	</td><td>PL</td></tr>
+    <tr><td>        756867	 </td><td>Tomaszow Mazowiecki	</td><td>PL</td></tr>
+    <tr><td>        3083103 </td><td>	Trzebnica	</td><td>PL</td></tr>
+    <tr><td>        3082473 </td><td>	Wejherowo	</td><td>PL</td></tr>
+    <tr><td>        3083111 </td><td>	Trzebinia	</td><td>PL</td></tr>
+    <tr><td>        3084404 </td><td>	Strzelin	</td><td>PL</td></tr>
+    <tr><td>        3090768 </td><td>	Nowa Ruda	</td><td>PL</td></tr>
+    <tr><td>        765976	 </td><td>Losice	</td><td>PL</td></tr>
+    <tr><td>        3087307 </td><td>	Rawicz	</td><td>PL</td></tr>
+    <tr><td>        760917	 </td><td>Pultusk	</td><td>PL</td></tr>
+    <tr><td>        764634	 </td><td>Mlawa	</td><td>PL</td></tr>
+    <tr><td>        772748	 </td><td>Dzialdowo	</td><td>PL</td></tr>
+    <tr><td>        760584	 </td><td>Rawa Mazowiecka	</td><td>PL</td></tr>
+    <tr><td>        3099619 </td><td>	Gabin	</td><td>PL</td></tr>
+    <tr><td>        759859	 </td><td>Ryglice	</td><td>PL</td></tr>
+    <tr><td>        773832	 </td><td>Czchow	</td><td>PL</td></tr>
+    <tr><td>        3080944 </td><td>	Zagan	</td><td>PL</td></tr>
+    <tr><td>        3080231 </td><td>	Zgorzelec	</td><td>PL</td></tr>
+    <tr><td>        766301	 </td><td>Limanowa	</td><td>PL</td></tr>
+    <tr><td>        3080047 </td><td>	Znin	</td><td>PL</td></tr>
+    <tr><td>        3085172 </td><td>	Solec Kujawski	</td><td>PL</td></tr>
+    <tr><td>        3083440 </td><td>	Tarnowskie Gory	</td><td>PL</td></tr>
+    <tr><td>        776337	 </td><td>Bartoszyce	</td><td>PL</td></tr>
+    <tr><td>        3089779 </td><td>	Ostroda	</td><td>PL</td></tr>
+    <tr><td>        766307	 </td><td>Lidzbark Warminski	</td><td>PL</td></tr>
+    <tr><td>        764039	 </td><td>Nidzica	</td><td>PL</td></tr>
+    <tr><td>        769274	 </td><td>Ketrzyn	</td><td>PL</td></tr>
+    <tr><td>        755474	 </td><td>Wlodawa	</td><td>PL</td></tr>
+    <tr><td>        753895	 </td><td>Zambrow	</td><td>PL</td></tr>
+    <tr><td>        3080251 </td><td>	Zgierz	</td><td>PL</td></tr>
+    <tr><td>        3086134 </td><td>	Sianow	</td><td>PL</td></tr>
+    <tr><td>        3100637 </td><td>	Darlowo	</td><td>PL</td></tr>
+    <tr><td>        3093739 </td><td>	Lebork	</td><td>PL</td></tr>
+    <tr><td>        3083611 </td><td>	Szubin	</td><td>PL</td></tr>
+    <tr><td>        3083043 </td><td>	Tuchola	</td><td>PL</td></tr>
+    <tr><td>        3080389 </td><td>	Zdzieszowice	</td><td>PL</td></tr>
+    <tr><td>        3085656 </td><td>	Skwierzyna	</td><td>PL</td></tr>
+    <tr><td>        3084107 </td><td>	Swiatniki Gorne	</td><td>PL</td></tr>
+    <tr><td>        3097333 </td><td>	Jaworzno	</td><td>PL</td></tr>
+    <tr><td>        769539	 </td><td>Karczew	</td><td>PL</td></tr>
+    <tr><td>        775986	 </td><td>Bielsk Podlaski	</td><td>PL</td></tr>
+    <tr><td>        762120	 </td><td>Pisz	</td><td>PL</td></tr>
+    <tr><td>        3088034 </td><td>	Pruszcz Gdanski	</td><td>PL</td></tr>
+    <tr><td>        3086706 </td><td>	Rumia	</td><td>PL</td></tr>
+    <tr><td>        3096525 </td><td>	Kartuzy	</td><td>PL</td></tr>
+    <tr><td>        763556	 </td><td>Nowy Dwor Mazowiecki	</td><td>PL</td></tr>
+    <tr><td>        3090170 </td><td>	Olesnica	</td><td>PL</td></tr>
+    <tr><td>        3081324 </td><td>	Wrzesnia	</td><td>PL</td></tr>
+    <tr><td>        3083878 </td><td>	Szamotuly	</td><td>PL</td></tr>
+    <tr><td>        3090403 </td><td>	Oborniki	</td><td>PL</td></tr>
+    <tr><td>        3085045 </td><td>	Sroda Wielkopolska	</td><td>PL</td></tr>
+    <tr><td>        3101968 </td><td>	Bystrzyca Klodzka	</td><td>PL</td></tr>
+    <tr><td>        754351	 </td><td>Zabki	</td><td>PL</td></tr>
+    <tr><td>        769981	 </td><td>Jozefow	</td><td>PL</td></tr>
+    <tr><td>        753276	 </td><td>Zielonka	</td><td>PL</td></tr>
+    <tr><td>        768218	 </td><td>Konskie	</td><td>PL</td></tr>
+    <tr><td>        760680	 </td><td>Radzyn Podlaski	</td><td>PL</td></tr>
+    <tr><td>        3097420 </td><td>	Jastrowie	</td><td>PL</td></tr>
+    <tr><td>        763111	 </td><td>Opoczno	</td><td>PL</td></tr>
+    <tr><td>        761131	 </td><td>Przeworsk	</td><td>PL</td></tr>
+    <tr><td>        3082704 </td><td>	Walcz	</td><td>PL</td></tr>
+    <tr><td>        3103476 </td><td>	Bielawa	</td><td>PL</td></tr>
+    <tr><td>        3096444 </td><td>	Katy Wroclawskie	</td><td>PL</td></tr>
+    <tr><td>        761878	 </td><td>Podkowa Lesna	</td><td>PL</td></tr>
+    <tr><td>        3087705 </td><td>	Pszczyna	</td><td>PL</td></tr>
+    <tr><td>        3099127 </td><td>	Gniew	</td><td>PL</td></tr>
+    <tr><td>        3080061 </td><td>	Zloty Stok	</td><td>PL</td></tr>
+    <tr><td>        756868	 </td><td>Tomaszow Lubelski	</td><td>PL</td></tr>
+    <tr><td>        773941	 </td><td>Czarna Bialostocka	</td><td>PL</td></tr>
+    <tr><td>        754451	 </td><td>Wyszogrod	</td><td>PL</td></tr>
+    <tr><td>        3091141 </td><td>	Namyslow	</td><td>PL</td></tr>
+    <tr><td>        772959	 </td><td>Drohiczyn	</td><td>PL</td></tr>
+    <tr><td>        3086435 </td><td>	Rzepin	</td><td>PL</td></tr>
+    <tr><td>        3096779 </td><td>	Kamienna Gora	</td><td>PL</td></tr>
+    <tr><td>        3084084 </td><td>	Swiebodzice	</td><td>PL</td></tr>
+    <tr><td>        3080226 </td><td>	Ziebice	</td><td>PL</td></tr>
+    <tr><td>        3084440 </td><td>	Strzegom	</td><td>PL</td></tr>
+    <tr><td>        3103365 </td><td>	Bierun	</td><td>PL</td></tr>
+    <tr><td>        3084030 </td><td>	Swierklany Dolne	</td><td>PL</td></tr>
+    <tr><td>        764862	 </td><td>Miedzyrzec Podlaski	</td><td>PL</td></tr>
+    <tr><td>        762643	 </td><td>Parczew	</td><td>PL</td></tr>
+    <tr><td>        3082838 </td><td>	Ujscie	</td><td>PL</td></tr>
+    <tr><td>        3092312 </td><td>	Margonin	</td><td>PL</td></tr>
+    <tr><td>        3083814 </td><td>	Szczekociny	</td><td>PL</td></tr>
+    <tr><td>        3092517 </td><td>	Makow Podhalanski	</td><td>PL</td></tr>
+    <tr><td>        3092638 </td><td>	Lwowek Slaski	</td><td>PL</td></tr>
+    <tr><td>        3095277 </td><td>	Konstantynow Lodzki	</td><td>PL</td></tr>
+    <tr><td>        758626	 </td><td>Sokolow Podlaski	</td><td>PL</td></tr>
+    <tr><td>        3100933 </td><td>	Czluchow	</td><td>PL</td></tr>
+    <tr><td>        3095192 </td><td>	Koronowo	</td><td>PL</td></tr>
+    <tr><td>        3081699 </td><td>	Wloszczowa	</td><td>PL</td></tr>
+    <tr><td>        3104133 </td><td>	Aleksandrow Kujawski	</td><td>PL</td></tr>
+    <tr><td>        3083921 </td><td>	Sycow	</td><td>PL</td></tr>
+    <tr><td>        767605	 </td><td>Krasnystaw	</td><td>PL</td></tr>
+    <tr><td>        3101722 </td><td>	Chocianow	</td><td>PL</td></tr>
+    <tr><td>        3096795 </td><td>	Kamieniec Zabkowicki	</td><td>PL</td></tr>
+    <tr><td>        765430	 </td><td>Makow Mazowiecki	</td><td>PL</td></tr>
+    <tr><td>        3089976 </td><td>	Orzech	</td><td>PL</td></tr>
+    <tr><td>        3099992 </td><td>	Duszniki-Zdroj	</td><td>PL</td></tr>
+    <tr><td>        3089065 </td><td>	Pieszyce	</td><td>PL</td></tr>
+    <tr><td>        3084515 </td><td>	Stronie Slaskie	</td><td>PL</td></tr>
+    <tr><td>        3080675 </td><td>	Zarki	</td><td>PL</td></tr>
+    <tr><td>        3090436 </td><td>	Nysa	</td><td>PL</td></tr>
+    <tr><td>        3102390 </td><td>	Brzeziny	</td><td>PL</td></tr>
+    <tr><td>        3080295 </td><td>	Zelow	</td><td>PL</td></tr>
+    <tr><td>        756048	 </td><td>Wegorzewo	</td><td>PL</td></tr>
+    <tr><td>        3084483 </td><td>	Strumien	</td><td>PL</td></tr>
+    <tr><td>        761546	 </td><td>Poniatowa	</td><td>PL</td></tr>
+    <tr><td>        3081874 </td><td>	Wisla	</td><td>PL</td></tr>
+    <tr><td>        769591	 </td><td>Kanczuga	</td><td>PL</td></tr>
+    <tr><td>        3084241 </td><td>	Sulechow	</td><td>PL</td></tr>
+    <tr><td>        774207	 </td><td>Ciechanowiec	</td><td>PL</td></tr>
+    <tr><td>        773569	 </td><td>Dabrowa Tarnowska	</td><td>PL</td></tr>
+    <tr><td>        3083752 </td><td>	Szczyrk	</td><td>PL</td></tr>
+    <tr><td>        3091743 </td><td>	Milowka	</td><td>PL</td></tr>
+    <tr><td>        3089965 </td><td>	Orzesze	</td><td>PL</td></tr>
+    <tr><td>        3094164 </td><td>	Kuznia Raciborska	</td><td>PL</td></tr>
+    <tr><td>        757809	 </td><td>Sulejowek	</td><td>PL</td></tr>
+    <tr><td>        770149	 </td><td>Jedwabne	</td><td>PL</td></tr>
+    <tr><td>        3092856 </td><td>	Lubon	</td><td>PL</td></tr>
+    <tr><td>        3085252 </td><td>	Sobotka	</td><td>PL</td></tr>
+    <tr><td>        3092894 </td><td>	Lubniewice	</td><td>PL</td></tr>
+    <tr><td>        3089582 </td><td>	Ozorkow	</td><td>PL</td></tr>
+    <tr><td>        3082485 </td><td>	Wegorzyno	</td><td>PL</td></tr>
+    <tr><td>        3094934 </td><td>	Kowary	</td><td>PL</td></tr>
+    <tr><td>        769345	 </td><td>Kazimierz Dolny	</td><td>PL</td></tr>
+    <tr><td>        775224	 </td><td>Brwinow	</td><td>PL</td></tr>
+    <tr><td>        3101795 </td><td>	Chelmno	</td><td>PL</td></tr>
+    <tr><td>        3096911 </td><td>	Kalety	</td><td>PL</td></tr>
+    <tr><td>        3080538 </td><td>	Zawadzkie	</td><td>PL</td></tr>
+    <tr><td>        756151	 </td><td>Warka	</td><td>PL</td></tr>
+    <tr><td>        3090558 </td><td>	Nowogard	</td><td>PL</td></tr>
+    <tr><td>        776080	 </td><td>Bialy Dunajec	</td><td>PL</td></tr>
+    <tr><td>        756634	 </td><td>Tuchow	</td><td>PL</td></tr>
+    <tr><td>        3101613 </td><td>	Choszczno	</td><td>PL</td></tr>
+    <tr><td>        3094170 </td><td>	Kutno	</td><td>PL</td></tr>
+    <tr><td>        3084415 </td><td>	Strzelce Opolskie	</td><td>PL</td></tr>
+    <tr><td>        3102677 </td><td>	Braniewo	</td><td>PL</td></tr>
+    <tr><td>        3096338 </td><td>	Kepno	</td><td>PL</td></tr>
+    <tr><td>        3098966 </td><td>	Goleniow	</td><td>PL</td></tr>
+    <tr><td>        768905	 </td><td>Kobylka	</td><td>PL</td></tr>
+    <tr><td>        3093027 </td><td>	Lubawka	</td><td>PL</td></tr>
+    <tr><td>        3100545 </td><td>	Debno	</td><td>PL</td></tr>
+    <tr><td>        3087630 </td><td>	Pyrzyce	</td><td>PL</td></tr>
+    <tr><td>        765188	 </td><td>Markowa	</td><td>PL</td></tr>
+    <tr><td>        754195	 </td><td>Zagorz	</td><td>PL</td></tr>
+    <tr><td>        3090076 </td><td>	Opalenica	</td><td>PL</td></tr>
+    <tr><td>        3091293 </td><td>	Murowana Goslina	</td><td>PL</td></tr>
+    <tr><td>        3097367 </td><td>	Jawor	</td><td>PL</td></tr>
+    <tr><td>        3088493 </td><td>	Polanka Wielka	</td><td>PL</td></tr>
+    <tr><td>        3084184 </td><td>	Sulmierzyce	</td><td>PL</td></tr>
+    <tr><td>        775717	 </td><td>Boguchwala	</td><td>PL</td></tr>
+    <tr><td>        3085925 </td><td>	Siewierz	</td><td>PL</td></tr>
+    <tr><td>        3101787 </td><td>	Chelmza	</td><td>PL</td></tr>
+    <tr><td>        760343	 </td><td>Ropczyce	</td><td>PL</td></tr>
+    <tr><td>        3086206 </td><td>	Scinawa	</td><td>PL</td></tr>
+    <tr><td>        3093040 </td><td>	Luban	</td><td>PL</td></tr>
+    <tr><td>        3085616 </td><td>	Slawkow	</td><td>PL</td></tr>
+    <tr><td>        3093708 </td><td>	Ledziny	</td><td>PL</td></tr>
+    <tr><td>        762106	 </td><td>Piwniczna-Zdroj	</td><td>PL</td></tr>
+    <tr><td>        3090099 </td><td>	Olszyna	</td><td>PL</td></tr>
+    <tr><td>        771953	 </td><td>Goldap	</td><td>PL</td></tr>
+    <tr><td>        3099371 </td><td>	Gieraltowice	</td><td>PL</td></tr>
+    <tr><td>        3097421 </td><td>	Jastarnia	</td><td>PL</td></tr>
+    <tr><td>        3093501 </td><td>	Lewin Brzeski	</td><td>PL</td></tr>
+    <tr><td>        3083632 </td><td>	Szprotawa	</td><td>PL</td></tr>
+    <tr><td>        756280	 </td><td>Ustrzyki Dolne	</td><td>PL</td></tr>
+    <tr><td>        3101660 </td><td>	Chojnow	</td><td>PL</td></tr>
+    <tr><td>        3096765 </td><td>	Kamien Pomorski	</td><td>PL</td></tr>
+    <tr><td>        756485	 </td><td>Tyczyn	</td><td>PL</td></tr>
+    <tr><td>        763028	 </td><td>Orzysz	</td><td>PL</td></tr>
+    <tr><td>        760516	 </td><td>Rejowiec Fabryczny	</td><td>PL</td></tr>
+    <tr><td>        3103531 </td><td>	Bialy Bor	</td><td>PL</td></tr>
+    <tr><td>        3091700 </td><td>	Miroslawiec	</td><td>PL</td></tr>
+    <tr><td>        3101467 </td><td>	Chybie	</td><td>PL</td></tr>
+    <tr><td>        3090551 </td><td>	Nowogrodziec	</td><td>PL</td></tr>
+    <tr><td>        756688	 </td><td>Trzebownisko	</td><td>PL</td></tr>
+    <tr><td>        756120	 </td><td>Wasilkow	</td><td>PL</td></tr>
+    <tr><td>        3098925 </td><td>	Golub-Dobrzyn	</td><td>PL</td></tr>
+    <tr><td>        3088065 </td><td>	Prudnik	</td><td>PL</td></tr>
+    <tr><td>        3091089 </td><td>	Nekla	</td><td>PL</td></tr>
+    <tr><td>        3083334 </td><td>	Tolkmicko	</td><td>PL</td></tr>
+    <tr><td>        3096240 </td><td>	Kietrz	</td><td>PL</td></tr>
+    <tr><td>        3088077 </td><td>	Proszkow	</td><td>PL</td></tr>
+    <tr><td>        3091315 </td><td>	Mszana	</td><td>PL</td></tr>
+    <tr><td>        3098199 </td><td>	Gryfow Slaski	</td><td>PL</td></tr>
+    <tr><td>        772086	 </td><td>Glogow Malopolski	</td><td>PL</td></tr>
+    <tr><td>        762203	 </td><td>Pilzno	</td><td>PL</td></tr>
+    <tr><td>        773148	 </td><td>Dobre Miasto	</td><td>PL</td></tr>
+    <tr><td>        757029	 </td><td>Tarnogrod	</td><td>PL</td></tr>
+    <tr><td>        765932	 </td><td>Lubaczow	</td><td>PL</td></tr>
+    <tr><td>        3090245 </td><td>	Okonek	</td><td>PL</td></tr>
+    <tr><td>        3091150 </td><td>	Naklo nad Notecia	</td><td>PL</td></tr>
+    <tr><td>        757758	 </td><td>Suprasl	</td><td>PL</td></tr>
+    <tr><td>        3091961 </td><td>	Miedzyzdroje	</td><td>PL</td></tr>
+    <tr><td>        3093439 </td><td>	Lidzbark	</td><td>PL</td></tr>
+    <tr><td>        3093158 </td><td>	Lobez	</td><td>PL</td></tr>
+    <tr><td>        3084460 </td><td>	Stryszawa	</td><td>PL</td></tr>
+    <tr><td>        3083263 </td><td>	Toszek	</td><td>PL</td></tr>
+    <tr><td>        3104002 </td><td>	Babimost	</td><td>PL</td></tr>
+    <tr><td>        3091894 </td><td>	Mierzecice	</td><td>PL</td></tr>
+    <tr><td>        3089098 </td><td>	Piensk	</td><td>PL</td></tr>
+    <tr><td>        3084055 </td><td>	Swieradow-Zdroj	</td><td>PL</td></tr>
+    <tr><td>        3091901 </td><td>	Mieroszow	</td><td>PL</td></tr>
+    <tr><td>        757452	 </td><td>Szczebrzeszyn	</td><td>PL</td></tr>
+    <tr><td>        3096558 </td><td>	Karsin	</td><td>PL</td></tr>
+    <tr><td>        3100171 </td><td>	Dopiewo	</td><td>PL</td></tr>
+    <tr><td>        3103034 </td><td>	Boguszow-Gorce	</td><td>PL</td></tr>
+    <tr><td>        3087782 </td><td>	Przystajn	</td><td>PL</td></tr>
+    <tr><td>        3082025 </td><td>	Wilamowice	</td><td>PL</td></tr>
+    <tr><td>        764276	 </td><td>Mszana Dolna	</td><td>PL</td></tr>
+    <tr><td>        3093749 </td><td>	Leba	</td><td>PL</td></tr>
+    <tr><td>        774790	 </td><td>Bukowina Tatrzanska	</td><td>PL</td></tr>
+    <tr><td>        3086531 </td><td>	Rydultowy	</td><td>PL</td></tr>
+    <tr><td>        756438	 </td><td>Tyszowce	</td><td>PL</td></tr>
+    <tr><td>        3094400 </td><td>	Krzyzanowice	</td><td>PL</td></tr>
+    <tr><td>        3081387 </td><td>	Wreczyca Wielka	</td><td>PL</td></tr>
+    <tr><td>        758973	 </td><td>Slawatycze	</td><td>PL</td></tr>
+    <tr><td>        755855	 </td><td>Wielopole Skrzynskie	</td><td>PL</td></tr>
+    <tr><td>        765673	 </td><td>Luzna	</td><td>PL</td></tr>
+    <tr><td>        756484	 </td><td>Tykocin	</td><td>PL</td></tr>
+    <tr><td>        762851	 </td><td>Ostrow Lubelski	</td><td>PL</td></tr>
+    <tr><td>        768963	 </td><td>Knyszyn	</td><td>PL</td></tr>
+    <tr><td>        761255	 </td><td>Pruchnik	</td><td>PL</td></tr>
+    <tr><td>        3087954 </td><td>	Przemkow	</td><td>PL</td></tr>
+    <tr><td>        765804	 </td><td>Ludwin	</td><td>PL</td></tr>
+    <tr><td>        3096090 </td><td>	Klobuck	</td><td>PL</td></tr>
+    <tr><td>        756258	 </td><td>Wachock	</td><td>PL</td></tr>
+    <tr><td>        3087195 </td><td>	Resko	</td><td>PL</td></tr>
+    <tr><td>        3087401 </td><td>	Rajcza	</td><td>PL</td></tr>
+    <tr><td>        3091686 </td><td>	Mirsk	</td><td>PL</td></tr>
+    <tr><td>        7534274 </td><td>	Sztutowo	</td><td>PL</td></tr>
+    <tr><td>        3103179 </td><td>	Bobolice	</td><td>PL</td></tr>
+    <tr><td>        774387	 </td><td>Chorzele	</td><td>PL</td></tr>
+    <tr><td>        3091263 </td><td>	Myslakowice	</td><td>PL</td></tr>
+    <tr><td>        3096165 </td><td>	Klecko	</td><td>PL</td></tr>
+    <tr><td>        3087617 </td><td>	Pyzdry	</td><td>PL</td></tr>
+    <tr><td>        760769	 </td><td>Radomysl Wielki	</td><td>PL</td></tr>
+    <tr><td>        771165	 </td><td>Haczow	</td><td>PL</td></tr>
+    <tr><td>        758633	 </td><td>Sokolow Malopolski	</td><td>PL</td></tr>
+    <tr><td>        3083177 </td><td>	Trzciel	</td><td>PL</td></tr>
+    <tr><td>        3099634 </td><td>	Frombork	</td><td>PL</td></tr>
+    <tr><td>        3094016 </td><td>	Ladek-Zdroj	</td><td>PL</td></tr>
+    <tr><td>        757322	 </td><td>Szerzyny	</td><td>PL</td></tr>
+    <tr><td>        3086541 </td><td>	Rychwal	</td><td>PL</td></tr>
+    <tr><td>        3102456 </td><td>	Brzeg Dolny	</td><td>PL</td></tr>
+    <tr><td>        3098288 </td><td>	Grodzisk Wielkopolski	</td><td>PL</td></tr>
+    <tr><td>        762863	 </td><td>Ostrowiec Swietokrzyski	</td><td>PL</td></tr>
+    <tr><td>        3090613 </td><td>	Nowe Miasto Lubawskie	</td><td>PL</td></tr>
+    <tr><td>        3082945 </td><td>	Tuszyn	</td><td>PL</td></tr>
+    <tr><td>        3098030 </td><td>	Hel	</td><td>PL</td></tr>
+    <tr><td>        3090401 </td><td>	Oborniki Slaskie	</td><td>PL</td></tr>
+    <tr><td>        3101947 </td><td>	Bytom Odrzanski	</td><td>PL</td></tr>
+    <tr><td>        3085481 </td><td>	Slupca	</td><td>PL</td></tr>
+    <tr><td>        763107	 </td><td>Opole Lubelskie	</td><td>PL</td></tr>
+    <tr><td>        3094633 </td><td>	Krosno Odrzanskie	</td><td>PL</td></tr>
+    <tr><td>        3096852 </td><td>	Kalwaria Zebrzydowska	</td><td>PL</td></tr>
+    <tr><td>        3083677 </td><td>	Szklarska Poreba	</td><td>PL</td></tr>
+    <tr><td>        3096885 </td><td>	Kaliska	</td><td>PL</td></tr>
+    <tr><td>        3095330 </td><td>	Koniecpol	</td><td>PL</td></tr>
+    <tr><td>        3094513 </td><td>	Krzepice	</td><td>PL</td></tr>
+    <tr><td>        759007	 </td><td>Skrzyszow	</td><td>PL</td></tr>
+    <tr><td>        3082801 </td><td>	Uniejow	</td><td>PL</td></tr>
+    <tr><td>        3099048 </td><td>	Gogolin	</td><td>PL</td></tr>
+    <tr><td>        768163	 </td><td>Koprzywnica	</td><td>PL</td></tr>
+    <tr><td>        759722	 </td><td>Rzezawa	</td><td>PL</td></tr>
+    <tr><td>        3101170 </td><td>	Czarna Woda	</td><td>PL</td></tr>
+    <tr><td>        762909	 </td><td>Ostroleka	</td><td>PL</td></tr>
+    <tr><td>        770380	 </td><td>Jaroslaw	</td><td>PL</td></tr>
+    <tr><td>        3097902 </td><td>	Ilawa	</td><td>PL</td></tr>
+    <tr><td>        3085495 </td><td>	Slubice	</td><td>PL</td></tr>
+    <tr><td>        3099213 </td><td>	Glogow	</td><td>PL</td></tr>
+    <tr><td>        760924	 </td><td>Pulawy	</td><td>PL</td></tr>
+    <tr><td>        3080074 </td><td>	Zlotoryja	</td><td>PL</td></tr>
+    <tr><td>        3096873 </td><td>	Kalisz Pomorski	</td><td>PL</td></tr>
+    <tr><td>        3097107 </td><td>	Jordanow	</td><td>PL</td></tr>
+    <tr><td>        775086	 </td><td>Brzozow	</td><td>PL</td></tr>
+    <tr><td>        3099146 </td><td>	Gluszyca	</td><td>PL</td></tr>
+    <tr><td>        3091991 </td><td>	Miedzyborz	</td><td>PL</td></tr>
+    <tr><td>        3097688 </td><td>	Janikowo	</td><td>PL</td></tr>
+    <tr><td>        3094898 </td><td>	Kozieglowy	</td><td>PL</td></tr>
+    <tr><td>        3090470 </td><td>	Nowy Staw	</td><td>PL</td></tr>
+    <tr><td>        3087535 </td><td>	Radkow	</td><td>PL</td></tr>
+    <tr><td>        3103588 </td><td>	Biale Blota	</td><td>PL</td></tr>
+    <tr><td>        762361	 </td><td>Piecki	</td><td>PL</td></tr>
+    <tr><td>        771729	 </td><td>Gorzyce	</td><td>PL</td></tr>
+    <tr><td>        3085867 </td><td>	Skala	</td><td>PL</td></tr>
+    <tr><td>        755775	 </td><td>Wierzchoslawice	</td><td>PL</td></tr>
+    <tr><td>        772915	 </td><td>Drzewica	</td><td>PL</td></tr>
+    <tr><td>        3091979 </td><td>	Miedzylesie	</td><td>PL</td></tr>
+    <tr><td>        760783	 </td><td>Radlow	</td><td>PL</td></tr>
+    <tr><td>        3087994 </td><td>	Przedborz	</td><td>PL</td></tr>
+    <tr><td>        768002	 </td><td>Kosow Lacki	</td><td>PL</td></tr>
+    <tr><td>        3097339 </td><td>	Jaworze	</td><td>PL</td></tr>
+    <tr><td>        760684	 </td><td>Radzymin	</td><td>PL</td></tr>
+    <tr><td>        757957	 </td><td>Strzyzow	</td><td>PL</td></tr>
+    <tr><td>        764777	 </td><td>Mikolajki	</td><td>PL</td></tr>
+    <tr><td>        776053	 </td><td>Biecz	</td><td>PL</td></tr>
+    <tr><td>        3085637 </td><td>	Slawa	</td><td>PL</td></tr>
+    <tr><td>        3093283 </td><td>	Lipnica Mala	</td><td>PL</td></tr>
+    <tr><td>        3085781 </td><td>	Skoki	</td><td>PL</td></tr>
+    <tr><td>        752967	 </td><td>Zyrardow	</td><td>PL</td></tr>
+    <tr><td>        753866	 </td><td>Zamosc	</td><td>PL</td></tr>
+    <tr><td>        754800	 </td><td>Wolomin	</td><td>PL</td></tr>
+    <tr><td>        755889	 </td><td>Wieliczka	</td><td>PL</td></tr>
+    <tr><td>        757692	 </td><td>Swidnik	</td><td>PL</td></tr>
+    <tr><td>        758390	 </td><td>Starachowice	</td><td>PL</td></tr>
+    <tr><td>        758651	 </td><td>Sokolka	</td><td>PL</td></tr>
+    <tr><td>        759141	 </td><td>Skarzysko-Kamienna	</td><td>PL</td></tr>
+    <tr><td>        759320	 </td><td>Siemiatycze	</td><td>PL</td></tr>
+    <tr><td>        759412	 </td><td>Siedlce	</td><td>PL</td></tr>
+    <tr><td>        761168	 </td><td>Przemysl	</td><td>PL</td></tr>
+    <tr><td>        761228	 </td><td>Pruszkow	</td><td>PL</td></tr>
+    <tr><td>        762381	 </td><td>Piastow	</td><td>PL</td></tr>
+    <tr><td>        762788	 </td><td>Otwock	</td><td>PL</td></tr>
+    <tr><td>        763291	 </td><td>Olecko	</td><td>PL</td></tr>
+    <tr><td>        763829	 </td><td>Nisko	</td><td>PL</td></tr>
+    <tr><td>        764679	 </td><td>Minsk Mazowiecki	</td><td>PL</td></tr>
+    <tr><td>        764749	 </td><td>Milanowek	</td><td>PL</td></tr>
+    <tr><td>        765191	 </td><td>Marki	</td><td>PL</td></tr>
+    <tr><td>        765749	 </td><td>Lukow	</td><td>PL</td></tr>
+    <tr><td>        765927	 </td><td>Lubartow	</td><td>PL</td></tr>
+    <tr><td>        766027	 </td><td>Lomza	</td><td>PL</td></tr>
+    <tr><td>        766042	 </td><td>Lomianki	</td><td>PL</td></tr>
+    <tr><td>        766583	 </td><td>Leczna	</td><td>PL</td></tr>
+    <tr><td>        766783	 </td><td>Lapy	</td><td>PL</td></tr>
+    <tr><td>        767623	 </td><td>Krasnik	</td><td>PL</td></tr>
+    <tr><td>        768216	 </td><td>Konstancin-Jeziorna	</td><td>PL</td></tr>
+    <tr><td>        769893	 </td><td>Kabaty	</td><td>PL</td></tr>
+    <tr><td>        770966	 </td><td>Hrubieszow	</td><td>PL</td></tr>
+    <tr><td>        771401	 </td><td>Grodzisk Mazowiecki	</td><td>PL</td></tr>
+    <tr><td>        772227	 </td><td>Gierloz	</td><td>PL</td></tr>
+    <tr><td>        772339	 </td><td>Garwolin	</td><td>PL</td></tr>
+    <tr><td>        772621	 </td><td>Elk	</td><td>PL</td></tr>
+    <tr><td>        773357	 </td><td>Deblin	</td><td>PL</td></tr>
+    <tr><td>        774558	 </td><td>Chelm	</td><td>PL</td></tr>
+    <tr><td>        775922	 </td><td>Bilgoraj	</td><td>PL</td></tr>
+    <tr><td>        776069	 </td><td>Bialystok	</td><td>PL</td></tr>
+    <tr><td>        3079855 </td><td>	Zywiec	</td><td>PL</td></tr>
+    <tr><td>        3080071 </td><td>	Zlotow	</td><td>PL</td></tr>
+    <tr><td>        3080526 </td><td>	Zawiercie	</td><td>PL</td></tr>
+    <tr><td>        3081046 </td><td>	Zabkowice Slaskie	</td><td>PL</td></tr>
+    <tr><td>        3081741 </td><td>	Wloclawek	</td><td>PL</td></tr>
+    <tr><td>        3082712 </td><td>	Wagrowiec	</td><td>PL</td></tr>
+    <tr><td>        3082914 </td><td>	Tychy	</td><td>PL</td></tr>
+    <tr><td>        3082998 </td><td>	Turek	</td><td>PL</td></tr>
+    <tr><td>        3083185 </td><td>	Trzcianka	</td><td>PL</td></tr>
+    <tr><td>        3083988 </td><td>	Swietochlowice	</td><td>PL</td></tr>
+    <tr><td>        3084062 </td><td>	Swiebodzin	</td><td>PL</td></tr>
+    <tr><td>        3084085 </td><td>	Swidwin	</td><td>PL</td></tr>
+    <tr><td>        3084826 </td><td>	Starogard Gdanski	</td><td>PL</td></tr>
+    <tr><td>        3085056 </td><td>	Srem	</td><td>PL</td></tr>
+    <tr><td>        3085128 </td><td>	Sosnowiec	</td><td>PL</td></tr>
+    <tr><td>        3085807 </td><td>	Skawina	</td><td>PL</td></tr>
+    <tr><td>        3085941 </td><td>	Sierpc	</td><td>PL</td></tr>
+    <tr><td>        3086024 </td><td>	Siemianowice Slaskie	</td><td>PL</td></tr>
+    <tr><td>        3086511 </td><td>	Rypin	</td><td>PL</td></tr>
+    <tr><td>        3086586 </td><td>	Rybnik	</td><td>PL</td></tr>
+    <tr><td>        3086800 </td><td>	Ruda Slaska	</td><td>PL</td></tr>
+    <tr><td>        3087281 </td><td>	Reda	</td><td>PL</td></tr>
+    <tr><td>        3087418 </td><td>	Radzionkow	</td><td>PL</td></tr>
+    <tr><td>        3087529 </td><td>	Radlin	</td><td>PL</td></tr>
+    <tr><td>        3088171 </td><td>	Poznan	</td><td>PL</td></tr>
+    <tr><td>        3088435 </td><td>	Polkowice	</td><td>PL</td></tr>
+    <tr><td>        3088461 </td><td>	Police	</td><td>PL</td></tr>
+    <tr><td>        3089125 </td><td>	Piekary Slaskie	</td><td>PL</td></tr>
+    <tr><td>        3089658 </td><td>	Oswiecim	</td><td>PL</td></tr>
+    <tr><td>        3090433 </td><td>	Nysa Zamlynie	</td><td>PL</td></tr>
+    <tr><td>        3090452 </td><td>	Nowy Tomysl	</td><td>PL</td></tr>
+    <tr><td>        3091217 </td><td>	Myszkow	</td><td>PL</td></tr>
+    <tr><td>        3091232 </td><td>	Myslowice	</td><td>PL</td></tr>
+    <tr><td>        3091831 </td><td>	Mikolow	</td><td>PL</td></tr>
+    <tr><td>        3091969 </td><td>	Miedzyrzecz	</td><td>PL</td></tr>
+    <tr><td>        3092472 </td><td>	Malbork	</td><td>PL</td></tr>
+    <tr><td>        3093457 </td><td>	Libiaz	</td><td>PL</td></tr>
+    <tr><td>        3093726 </td><td>	Leczyca	</td><td>PL</td></tr>
+    <tr><td>        3094788 </td><td>	Krapkowice	</td><td>PL</td></tr>
+    <tr><td>        3095049 </td><td>	Koszalin	</td><td>PL</td></tr>
+    <tr><td>        3095151 </td><td>	Koscian	</td><td>PL</td></tr>
+    <tr><td>        3095797 </td><td>	Kolo	</td><td>PL</td></tr>
+    <tr><td>        3096003 </td><td>	Kluczbork	</td><td>PL</td></tr>
+    <tr><td>        3096472 </td><td>	Katowice	</td><td>PL</td></tr>
+    <tr><td>        3096880 </td><td>	Kalisz	</td><td>PL</td></tr>
+    <tr><td>        3097271 </td><td>	Jelcz	</td><td>PL</td></tr>
+    <tr><td>        3097391 </td><td>	Jastrzebie Zdroj	</td><td>PL</td></tr>
+    <tr><td>        3097528 </td><td>	Jarocin	</td><td>PL</td></tr>
+    <tr><td>        3098130 </td><td>	Gubin	</td><td>PL</td></tr>
+    <tr><td>        3098201 </td><td>	Gryfice	</td><td>PL</td></tr>
+    <tr><td>        3098619 </td><td>	Gostynin	</td><td>PL</td></tr>
+    <tr><td>        3099112 </td><td>	Gniezno	</td><td>PL</td></tr>
+    <tr><td>        3099169 </td><td>	Glucholazy	</td><td>PL</td></tr>
+    <tr><td>        3099180 </td><td>	Glowno	</td><td>PL</td></tr>
+    <tr><td>        3099654 </td><td>	Fordon	</td><td>PL</td></tr>
+    <tr><td>        3100796 </td><td>	Dabrowa Gornicza	</td><td>PL</td></tr>
+    <tr><td>        3100974 </td><td>	Czerwionka-Leszczyny	</td><td>PL</td></tr>
+    <tr><td>        3101057 </td><td>	Czeladz	</td><td>PL</td></tr>
+    <tr><td>        3101321 </td><td>	Cieszyn	</td><td>PL</td></tr>
+    <tr><td>        3101680 </td><td>	Chodziez	</td><td>PL</td></tr>
+    <tr><td>        3101950 </td><td>	Bytom	</td><td>PL</td></tr>
+    <tr><td>        3102014 </td><td>	Bydgoszcz	</td><td>PL</td></tr>
+    <tr><td>        3102459 </td><td>	Brzeg	</td><td>PL</td></tr>
+    <tr><td>        3103709 </td><td>	Belchatow	</td><td>PL</td></tr>
+    <tr><td>        3103719 </td><td>	Bedzin	</td><td>PL</td></tr>
+    <tr><td>        3104132 </td><td>	Aleksandrow Lodzki	</td><td>PL</td></tr>
+    <tr><td>        7303641 </td><td>	Jelcz Laskowice	</td><td>PL</td></tr>
+    <tr><td>        3091788 </td><td>	Milicz	</td><td>PL</td></tr>
+    <tr><td>        753004	 </td><td>Zwolen	</td><td>PL</td></tr>
+    <tr><td>        753020	 </td><td>Zwierzyniec	</td><td>PL</td></tr>
+    <tr><td>        753037	 </td><td>Zurowa	</td><td>PL</td></tr>
+    <tr><td>        753056	 </td><td>Zurawica	</td><td>PL</td></tr>
+    <tr><td>        753130	 </td><td>Zolynia	</td><td>PL</td></tr>
+    <tr><td>        753394	 </td><td>Zelechow	</td><td>PL</td></tr>
+    <tr><td>        753760	 </td><td>Zarzecze	</td><td>PL</td></tr>
+    <tr><td>        753955	 </td><td>Zalesie Gorne	</td><td>PL</td></tr>
+    <tr><td>        754069	 </td><td>Zakroczym	</td><td>PL</td></tr>
+    <tr><td>        754090	 </td><td>Zaklikow	</td><td>PL</td></tr>
+    <tr><td>        754174	 </td><td>Zagorzyce	</td><td>PL</td></tr>
+    <tr><td>        754329	 </td><td>Zabno	</td><td>PL</td></tr>
+    <tr><td>        754331	 </td><td>Zabludow	</td><td>PL</td></tr>
+    <tr><td>        754479	 </td><td>Wysokie Mazowieckie	</td><td>PL</td></tr>
+    <tr><td>        754499	 </td><td>Wysoka Strzyzowska	</td><td>PL</td></tr>
+    <tr><td>        754508	 </td><td>Wysoka Glogowska	</td><td>PL</td></tr>
+    <tr><td>        754509	 </td><td>Wysoka	</td><td>PL</td></tr>
+    <tr><td>        754652	 </td><td>Wydminy	</td><td>PL</td></tr>
+    <tr><td>        755090	 </td><td>Wola Zarczycka	</td><td>PL</td></tr>
+    <tr><td>        755327	 </td><td>Wola Batorska	</td><td>PL</td></tr>
+    <tr><td>        755390	 </td><td>Wojnicz	</td><td>PL</td></tr>
+    <tr><td>        755438	 </td><td>Wohyn	</td><td>PL</td></tr>
+    <tr><td>        755675	 </td><td>Wilkolaz	</td><td>PL</td></tr>
+    <tr><td>        755810	 </td><td>Wierzbica	</td><td>PL</td></tr>
+    <tr><td>        755823	 </td><td>Wierzawice	</td><td>PL</td></tr>
+    <tr><td>        755886	 </td><td>Wieliszew	</td><td>PL</td></tr>
+    <tr><td>        755907	 </td><td>Wielbark	</td><td>PL</td></tr>
+    <tr><td>        756010	 </td><td>Wesola	</td><td>PL</td></tr>
+    <tr><td>        756028	 </td><td>Werbkowice	</td><td>PL</td></tr>
+    <tr><td>        756046	 </td><td>Wegrow	</td><td>PL</td></tr>
+    <tr><td>        756084	 </td><td>Wawrzenczyce	</td><td>PL</td></tr>
+    <tr><td>        756227	 </td><td>Waksmund	</td><td>PL</td></tr>
+    <tr><td>        756474	 </td><td>Tymbark	</td><td>PL</td></tr>
+    <tr><td>        756679	 </td><td>Trzemesnia	</td><td>PL</td></tr>
+    <tr><td>        756709	 </td><td>Trzcinica	</td><td>PL</td></tr>
+    <tr><td>        756735	 </td><td>Trzciana	</td><td>PL</td></tr>
+    <tr><td>        756819	 </td><td>Trawniki	</td><td>PL</td></tr>
+    <tr><td>        756825	 </td><td>Trabki	</td><td>PL</td></tr>
+    <tr><td>        756919	 </td><td>Tluszcz	</td><td>PL</td></tr>
+    <tr><td>        756938	 </td><td>Terespol	</td><td>PL</td></tr>
+    <tr><td>        756939	 </td><td>Teresin	</td><td>PL</td></tr>
+    <tr><td>        757071	 </td><td>Tarczyn	</td><td>PL</td></tr>
+    <tr><td>        757135	 </td><td>Szynwald	</td><td>PL</td></tr>
+    <tr><td>        757178	 </td><td>Szydlowiec	</td><td>PL</td></tr>
+    <tr><td>        757335	 </td><td>Szepietowo	</td><td>PL</td></tr>
+    <tr><td>        757386	 </td><td>Szczuczyn	</td><td>PL</td></tr>
+    <tr><td>        757388	 </td><td>Szczucin	</td><td>PL</td></tr>
+    <tr><td>        757461	 </td><td>Szczawnica	</td><td>PL</td></tr>
+    <tr><td>        757512	 </td><td>Szaflary	</td><td>PL</td></tr>
+    <tr><td>        757585	 </td><td>Swilcza	</td><td>PL</td></tr>
+    <tr><td>        757610	 </td><td>Swietajno	</td><td>PL</td></tr>
+    <tr><td>        757850	 </td><td>Suchowola	</td><td>PL</td></tr>
+    <tr><td>        757993	 </td><td>Strzegowo	</td><td>PL</td></tr>
+    <tr><td>        758091	 </td><td>Straszydle	</td><td>PL</td></tr>
+    <tr><td>        758157	 </td><td>Stoczek Lukowski	</td><td>PL</td></tr>
+    <tr><td>        758238	 </td><td>Stawiski	</td><td>PL</td></tr>
+    <tr><td>        758371	 </td><td>Stara Wies	</td><td>PL</td></tr>
+    <tr><td>        758393	 </td><td>Staporkow	</td><td>PL</td></tr>
+    <tr><td>        758416	 </td><td>Stanislawow	</td><td>PL</td></tr>
+    <tr><td>        758575	 </td><td>Sonina	</td><td>PL</td></tr>
+    <tr><td>        758646	 </td><td>Sokolniki	</td><td>PL</td></tr>
+    <tr><td>        758681	 </td><td>Sochocin	</td><td>PL</td></tr>
+    <tr><td>        758697	 </td><td>Sobolew	</td><td>PL</td></tr>
+    <tr><td>        758887	 </td><td>Slopnice	</td><td>PL</td></tr>
+    <tr><td>        758905	 </td><td>Slomniki	</td><td>PL</td></tr>
+    <tr><td>        759140	 </td><td>Skarzysko Koscielne	</td><td>PL</td></tr>
+    <tr><td>        759151	 </td><td>Skaryszew	</td><td>PL</td></tr>
+    <tr><td>        759194	 </td><td>Osiedle-Nowiny	</td><td>PL</td></tr>
+    <tr><td>        759282	 </td><td>Siennica	</td><td>PL</td></tr>
+    <tr><td>        759301	 </td><td>Sieniawa	</td><td>PL</td></tr>
+    <tr><td>        759399	 </td><td>Siedliska	</td><td>PL</td></tr>
+    <tr><td>        759470	 </td><td>Serock	</td><td>PL</td></tr>
+    <tr><td>        759482	 </td><td>Sepopol	</td><td>PL</td></tr>
+    <tr><td>        759503	 </td><td>Sejny	</td><td>PL</td></tr>
+    <tr><td>        759504	 </td><td>Sedziszow Malopolski	</td><td>PL</td></tr>
+    <tr><td>        759507	 </td><td>Sedziszow	</td><td>PL</td></tr>
+    <tr><td>        759534	 </td><td>Sawin	</td><td>PL</td></tr>
+    <tr><td>        759815	 </td><td>Rytro	</td><td>PL</td></tr>
+    <tr><td>        759839	 </td><td>Ryn	</td><td>PL</td></tr>
+    <tr><td>        759843	 </td><td>Rymanow	</td><td>PL</td></tr>
+    <tr><td>        759915	 </td><td>Rybie	</td><td>PL</td></tr>
+    <tr><td>        760055	 </td><td>Rudnik nad Sanem	</td><td>PL</td></tr>
+    <tr><td>        760166	 </td><td>Ruciane-Nida	</td><td>PL</td></tr>
+    <tr><td>        760237	 </td><td>Rozborz	</td><td>PL</td></tr>
+    <tr><td>        760255	 </td><td>Rozan	</td><td>PL</td></tr>
+    <tr><td>        760347	 </td><td>Ropa	</td><td>PL</td></tr>
+    <tr><td>        760404	 </td><td>Rokietnica	</td><td>PL</td></tr>
+    <tr><td>        760488	 </td><td>Reszel	</td><td>PL</td></tr>
+    <tr><td>        760518	 </td><td>Rejowiec	</td><td>PL</td></tr>
+    <tr><td>        760607	 </td><td>Raszyn	</td><td>PL</td></tr>
+    <tr><td>        760624	 </td><td>Ranizow	</td><td>PL</td></tr>
+    <tr><td>        760632	 </td><td>Rakszawa	</td><td>PL</td></tr>
+    <tr><td>        760727	 </td><td>Radymno	</td><td>PL</td></tr>
+    <tr><td>        760745	 </td><td>Radoszyce	</td><td>PL</td></tr>
+    <tr><td>        760804	 </td><td>Radgoszcz	</td><td>PL</td></tr>
+    <tr><td>        760825	 </td><td>Raczki	</td><td>PL</td></tr>
+    <tr><td>        760844	 </td><td>Raciaz	</td><td>PL</td></tr>
+    <tr><td>        760871	 </td><td>Pysznica	</td><td>PL</td></tr>
+    <tr><td>        761008	 </td><td>Przysucha	</td><td>PL</td></tr>
+    <tr><td>        761085	 </td><td>Przybyszowka	</td><td>PL</td></tr>
+    <tr><td>        761258	 </td><td>Proszowice	</td><td>PL</td></tr>
+    <tr><td>        761262	 </td><td>Prostki	</td><td>PL</td></tr>
+    <tr><td>        761437	 </td><td>Poronin	</td><td>PL</td></tr>
+    <tr><td>        761461	 </td><td>Poreba Spytkowska	</td><td>PL</td></tr>
+    <tr><td>        761652	 </td><td>Polaniec	</td><td>PL</td></tr>
+    <tr><td>        761714	 </td><td>Pogorska Wola	</td><td>PL</td></tr>
+    <tr><td>        761812	 </td><td>Podleze	</td><td>PL</td></tr>
+    <tr><td>        761921	 </td><td>Podegrodzie	</td><td>PL</td></tr>
+    <tr><td>        762118	 </td><td>Piszczac	</td><td>PL</td></tr>
+    <tr><td>        762201	 </td><td>Pinczow	</td><td>PL</td></tr>
+    <tr><td>        762223	 </td><td>Pilawa	</td><td>PL</td></tr>
+    <tr><td>        762311	 </td><td>Pieniezno	</td><td>PL</td></tr>
+    <tr><td>        762331	 </td><td>Piekoszow	</td><td>PL</td></tr>
+    <tr><td>        762390	 </td><td>Piaski	</td><td>PL</td></tr>
+    <tr><td>        762588	 </td><td>Pasym	</td><td>PL</td></tr>
+    <tr><td>        762734	 </td><td>Padew Narodowa	</td><td>PL</td></tr>
+    <tr><td>        762769	 </td><td>Ozarow Mazowiecki	</td><td>PL</td></tr>
+    <tr><td>        762774	 </td><td>Ozarow	</td><td>PL</td></tr>
+    <tr><td>        762792	 </td><td>Otrebusy	</td><td>PL</td></tr>
+    <tr><td>        763011	 </td><td>Osiek	</td><td>PL</td></tr>
+    <tr><td>        763066	 </td><td>Orneta	</td><td>PL</td></tr>
+    <tr><td>        763121	 </td><td>Opatow	</td><td>PL</td></tr>
+    <tr><td>        763165	 </td><td>Olsztynek	</td><td>PL</td></tr>
+    <tr><td>        763249	 </td><td>Olpiny	</td><td>PL</td></tr>
+    <tr><td>        763260	 </td><td>Oleszyce	</td><td>PL</td></tr>
+    <tr><td>        763399	 </td><td>Odrzywol	</td><td>PL</td></tr>
+    <tr><td>        763401	 </td><td>Odrzykon	</td><td>PL</td></tr>
+    <tr><td>        763440	 </td><td>Ochotnica Dolna	</td><td>PL</td></tr>
+    <tr><td>        763510	 </td><td>Nurzec-Stacja	</td><td>PL</td></tr>
+    <tr><td>        763521	 </td><td>Nowy Wisnicz	</td><td>PL</td></tr>
+    <tr><td>        763600	 </td><td>Nowogrod	</td><td>PL</td></tr>
+    <tr><td>        763659	 </td><td>Nowe Miasto nad Pilica	</td><td>PL</td></tr>
+    <tr><td>        763661	 </td><td>Nowe Miasto	</td><td>PL</td></tr>
+    <tr><td>        763765	 </td><td>Nowa Sarzyna	</td><td>PL</td></tr>
+    <tr><td>        763901	 </td><td>Nieporet	</td><td>PL</td></tr>
+    <tr><td>        763903	 </td><td>Niepolomice	</td><td>PL</td></tr>
+    <tr><td>        763914	 </td><td>Nienadowa	</td><td>PL</td></tr>
+    <tr><td>        763945	 </td><td>Niemce	</td><td>PL</td></tr>
+    <tr><td>        763989	 </td><td>Niedzwiada	</td><td>PL</td></tr>
+    <tr><td>        764000	 </td><td>Niedrzwica Duza	</td><td>PL</td></tr>
+    <tr><td>        764002	 </td><td>Niedomice	</td><td>PL</td></tr>
+    <tr><td>        764026	 </td><td>Niechobrz	</td><td>PL</td></tr>
+    <tr><td>        764036	 </td><td>Niebieszczany	</td><td>PL</td></tr>
+    <tr><td>        764067	 </td><td>Nawojowa	</td><td>PL</td></tr>
+    <tr><td>        764100	 </td><td>Nasielsk	</td><td>PL</td></tr>
+    <tr><td>        764117	 </td><td>Narol	</td><td>PL</td></tr>
+    <tr><td>        764145	 </td><td>Naleczow	</td><td>PL</td></tr>
+    <tr><td>        764194	 </td><td>Nadarzyn	</td><td>PL</td></tr>
+    <tr><td>        764204	 </td><td>Myszyniec	</td><td>PL</td></tr>
+    <tr><td>        764226	 </td><td>Mysiadlo	</td><td>PL</td></tr>
+    <tr><td>        764275	 </td><td>Mszana Gorna	</td><td>PL</td></tr>
+    <tr><td>        764292	 </td><td>Mrozy	</td><td>PL</td></tr>
+    <tr><td>        764343	 </td><td>Moszczenica	</td><td>PL</td></tr>
+    <tr><td>        764421	 </td><td>Monki	</td><td>PL</td></tr>
+    <tr><td>        764502	 </td><td>Mogielnica	</td><td>PL</td></tr>
+    <tr><td>        764531	 </td><td>Modliborzyce	</td><td>PL</td></tr>
+    <tr><td>        764659	 </td><td>Mirzec	</td><td>PL</td></tr>
+    <tr><td>        764740	 </td><td>Milejow	</td><td>PL</td></tr>
+    <tr><td>        764752	 </td><td>Milakowo	</td><td>PL</td></tr>
+    <tr><td>        764791	 </td><td>Mietne	</td><td>PL</td></tr>
+    <tr><td>        764860	 </td><td>Miejsce Piastowe	</td><td>PL</td></tr>
+    <tr><td>        764880	 </td><td>Miedziana Gora	</td><td>PL</td></tr>
+    <tr><td>        764917	 </td><td>Miechow	</td><td>PL</td></tr>
+    <tr><td>        764936	 </td><td>Michalowo	</td><td>PL</td></tr>
+    <tr><td>        764947	 </td><td>Michalowice	</td><td>PL</td></tr>
+    <tr><td>        765028	 </td><td>Medyka	</td><td>PL</td></tr>
+    <tr><td>        765274	 </td><td>Maniowy	</td><td>PL</td></tr>
+    <tr><td>        765313	 </td><td>Malogoszcz	</td><td>PL</td></tr>
+    <tr><td>        765328	 </td><td>Malkinia Gorna	</td><td>PL</td></tr>
+    <tr><td>        765514	 </td><td>Majdan Krolewski	</td><td>PL</td></tr>
+    <tr><td>        765600	 </td><td>Maciejowice	</td><td>PL</td></tr>
+    <tr><td>        765642	 </td><td>Lyse	</td><td>PL</td></tr>
+    <tr><td>        765736	 </td><td>Lukowica	</td><td>PL</td></tr>
+    <tr><td>        765745	 </td><td>Lukowa	</td><td>PL</td></tr>
+    <tr><td>        765914	 </td><td>Lubenia	</td><td>PL</td></tr>
+    <tr><td>        765957	 </td><td>Lososina Dolna	</td><td>PL</td></tr>
+    <tr><td>        766073	 </td><td>Lochow	</td><td>PL</td></tr>
+    <tr><td>        766132	 </td><td>Lisia Gora	</td><td>PL</td></tr>
+    <tr><td>        766137	 </td><td>Lipsko	</td><td>PL</td></tr>
+    <tr><td>        766142	 </td><td>Lipsk	</td><td>PL</td></tr>
+    <tr><td>        766191	 </td><td>Lipinki	</td><td>PL</td></tr>
+    <tr><td>        766201	 </td><td>Lipnica Wielka	</td><td>PL</td></tr>
+    <tr><td>        766369	 </td><td>Lesznowola	</td><td>PL</td></tr>
+    <tr><td>        766373	 </td><td>Leszno	</td><td>PL</td></tr>
+    <tr><td>        766452	 </td><td>Lesko	</td><td>PL</td></tr>
+    <tr><td>        766692	 </td><td>Laszczow	</td><td>PL</td></tr>
+    <tr><td>        766734	 </td><td>Laskowa	</td><td>PL</td></tr>
+    <tr><td>        766757	 </td><td>Laskarzew	</td><td>PL</td></tr>
+    <tr><td>        766793	 </td><td>Lapczyca	</td><td>PL</td></tr>
+    <tr><td>        766877	 </td><td>Lacko	</td><td>PL</td></tr>
+    <tr><td>        766980	 </td><td>Kurow	</td><td>PL</td></tr>
+    <tr><td>        767020	 </td><td>Kunow	</td><td>PL</td></tr>
+    <tr><td>        767300	 </td><td>Krzemienica	</td><td>PL</td></tr>
+    <tr><td>        767357	 </td><td>Krynki	</td><td>PL</td></tr>
+    <tr><td>        767374	 </td><td>Krynica-Zdroj	</td><td>PL</td></tr>
+    <tr><td>        767479	 </td><td>Kroscienko Wyzne	</td><td>PL</td></tr>
+    <tr><td>        767619	 </td><td>Krasnobrod	</td><td>PL</td></tr>
+    <tr><td>        767653	 </td><td>Krasne	</td><td>PL</td></tr>
+    <tr><td>        767720	 </td><td>Kraczkowa	</td><td>PL</td></tr>
+    <tr><td>        767763	 </td><td>Kozlowo	</td><td>PL</td></tr>
+    <tr><td>        767883	 </td><td>Kowale Oleckie	</td><td>PL</td></tr>
+    <tr><td>        767908	 </td><td>Kotun	</td><td>PL</td></tr>
+    <tr><td>        768039	 </td><td>Kosina	</td><td>PL</td></tr>
+    <tr><td>        768116	 </td><td>Korsze	</td><td>PL</td></tr>
+    <tr><td>        768136	 </td><td>Korczyna	</td><td>PL</td></tr>
+    <tr><td>        768217	 </td><td>Konskowola	</td><td>PL</td></tr>
+    <tr><td>        768315	 </td><td>Komorow	</td><td>PL</td></tr>
+    <tr><td>        768805	 </td><td>Kolbuszowa	</td><td>PL</td></tr>
+    <tr><td>        768807	 </td><td>Kolbiel	</td><td>PL</td></tr>
+    <tr><td>        768861	 </td><td>Kock	</td><td>PL</td></tr>
+    <tr><td>        768940	 </td><td>Kobylanka	</td><td>PL</td></tr>
+    <tr><td>        769059	 </td><td>Klimontow	</td><td>PL</td></tr>
+    <tr><td>        769135	 </td><td>Klaj	</td><td>PL</td></tr>
+    <tr><td>        769346	 </td><td>Kazimierza Wielka	</td><td>PL</td></tr>
+    <tr><td>        769443	 </td><td>Kasina Wielka	</td><td>PL</td></tr>
+    <tr><td>        769609	 </td><td>Kamionka Wielka	</td><td>PL</td></tr>
+    <tr><td>        769697	 </td><td>Kamienica	</td><td>PL</td></tr>
+    <tr><td>        769719	 </td><td>Kamien	</td><td>PL</td></tr>
+    <tr><td>        769738	 </td><td>Kaluszyn	</td><td>PL</td></tr>
+    <tr><td>        769835	 </td><td>Kadzidlo	</td><td>PL</td></tr>
+    <tr><td>        770005	 </td><td>Jozefow	</td><td>PL</td></tr>
+    <tr><td>        770008	 </td><td>Jozefoslaw	</td><td>PL</td></tr>
+    <tr><td>        770036	 </td><td>Jodlowa	</td><td>PL</td></tr>
+    <tr><td>        770045	 </td><td>Jezowe	</td><td>PL</td></tr>
+    <tr><td>        770078	 </td><td>Jeziorany	</td><td>PL</td></tr>
+    <tr><td>        770162	 </td><td>Jedlnia-Letnisko	</td><td>PL</td></tr>
+    <tr><td>        770346	 </td><td>Jasienica Rosielna	</td><td>PL</td></tr>
+    <tr><td>        770348	 </td><td>Jasienica	</td><td>PL</td></tr>
+    <tr><td>        770357	 </td><td>Jasien	</td><td>PL</td></tr>
+    <tr><td>        770413	 </td><td>Janow Podlaski	</td><td>PL</td></tr>
+    <tr><td>        770425	 </td><td>Janow Lubelski	</td><td>PL</td></tr>
+    <tr><td>        770661	 </td><td>Jadowniki	</td><td>PL</td></tr>
+    <tr><td>        770711	 </td><td>Jablonna	</td><td>PL</td></tr>
+    <tr><td>        770751	 </td><td>Izbica	</td><td>PL</td></tr>
+    <tr><td>        770762	 </td><td>Iwkowa	</td><td>PL</td></tr>
+    <tr><td>        770792	 </td><td>Ilza	</td><td>PL</td></tr>
+    <tr><td>        770833	 </td><td>Hyzne	</td><td>PL</td></tr>
+    <tr><td>        770911	 </td><td>Husow	</td><td>PL</td></tr>
+    <tr><td>        770918	 </td><td>Humniska	</td><td>PL</td></tr>
+    <tr><td>        770986	 </td><td>Horyniec-Zdroj	</td><td>PL</td></tr>
+    <tr><td>        771150	 </td><td>Halinow	</td><td>PL</td></tr>
+    <tr><td>        771286	 </td><td>Grzeska	</td><td>PL</td></tr>
+    <tr><td>        771313	 </td><td>Grybow	</td><td>PL</td></tr>
+    <tr><td>        771348	 </td><td>Grudki	</td><td>PL</td></tr>
+    <tr><td>        771374	 </td><td>Gromnik	</td><td>PL</td></tr>
+    <tr><td>        771384	 </td><td>Grojec	</td><td>PL</td></tr>
+    <tr><td>        771392	 </td><td>Grodzisko Gorne	</td><td>PL</td></tr>
+    <tr><td>        771477	 </td><td>Grebow	</td><td>PL</td></tr>
+    <tr><td>        771566	 </td><td>Grabownica Starzenska	</td><td>PL</td></tr>
+    <tr><td>        771779	 </td><td>Gorowo Ilaweckie	</td><td>PL</td></tr>
+    <tr><td>        771870	 </td><td>Gora Kalwaria	</td><td>PL</td></tr>
+    <tr><td>        771893	 </td><td>Goniadz	</td><td>PL</td></tr>
+    <tr><td>        771955	 </td><td>Golcowa	</td><td>PL</td></tr>
+    <tr><td>        771985	 </td><td>Godziszow	</td><td>PL</td></tr>
+    <tr><td>        772023	 </td><td>Gnojnik	</td><td>PL</td></tr>
+    <tr><td>        772107	 </td><td>Glinojeck	</td><td>PL</td></tr>
+    <tr><td>        772248	 </td><td>Giedlarowa	</td><td>PL</td></tr>
+    <tr><td>        772270	 </td><td>Gdow	</td><td>PL</td></tr>
+    <tr><td>        772366	 </td><td>Garbow	</td><td>PL</td></tr>
+    <tr><td>        772372	 </td><td>Garbatka-Letnisko	</td><td>PL</td></tr>
+    <tr><td>        772528	 </td><td>Filipow	</td><td>PL</td></tr>
+    <tr><td>        772768	 </td><td>Dywity	</td><td>PL</td></tr>
+    <tr><td>        772772	 </td><td>Dynow	</td><td>PL</td></tr>
+    <tr><td>        772857	 </td><td>Dukla	</td><td>PL</td></tr>
+    <tr><td>        772873	 </td><td>Duczki	</td><td>PL</td></tr>
+    <tr><td>        773040	 </td><td>Domaradz	</td><td>PL</td></tr>
+    <tr><td>        773165	 </td><td>Dobra	</td><td>PL</td></tr>
+    <tr><td>        773176	 </td><td>Dobczyce	</td><td>PL</td></tr>
+    <tr><td>        773217	 </td><td>Dlugosiodlo	</td><td>PL</td></tr>
+    <tr><td>        773250	 </td><td>Dlugie	</td><td>PL</td></tr>
+    <tr><td>        773320	 </td><td>Debowiec	</td><td>PL</td></tr>
+    <tr><td>        773386	 </td><td>Debe Wielkie	</td><td>PL</td></tr>
+    <tr><td>        773453	 </td><td>Daleszyce	</td><td>PL</td></tr>
+    <tr><td>        773593	 </td><td>Dabrowa Bialostocka	</td><td>PL</td></tr>
+    <tr><td>        773676	 </td><td>Czyzew	</td><td>PL</td></tr>
+    <tr><td>        773695	 </td><td>Czudec	</td><td>PL</td></tr>
+    <tr><td>        773802	 </td><td>Czeremcha	</td><td>PL</td></tr>
+    <tr><td>        773808	 </td><td>Czemierniki	</td><td>PL</td></tr>
+    <tr><td>        773966	 </td><td>Czarna	</td><td>PL</td></tr>
+    <tr><td>        774058	 </td><td>Cmolas	</td><td>PL</td></tr>
+    <tr><td>        774069	 </td><td>Cmielow	</td><td>PL</td></tr>
+    <tr><td>        774116	 </td><td>Ciezkowice	</td><td>PL</td></tr>
+    <tr><td>        774128	 </td><td>Cieszanow	</td><td>PL</td></tr>
+    <tr><td>        774304	 </td><td>Chrzanow	</td><td>PL</td></tr>
+    <tr><td>        774393	 </td><td>Choroszcz	</td><td>PL</td></tr>
+    <tr><td>        774504	 </td><td>Chmielnik	</td><td>PL</td></tr>
+    <tr><td>        774505	 </td><td>Chmielnik	</td><td>PL</td></tr>
+    <tr><td>        774554	 </td><td>Chelmiec	</td><td>PL</td></tr>
+    <tr><td>        774572	 </td><td>Checiny	</td><td>PL</td></tr>
+    <tr><td>        774641	 </td><td>Celestynow	</td><td>PL</td></tr>
+    <tr><td>        774649	 </td><td>Ceglow	</td><td>PL</td></tr>
+    <tr><td>        774730	 </td><td>Bychawa	</td><td>PL</td></tr>
+    <tr><td>        775098	 </td><td>Brzoza Krolewska	</td><td>PL</td></tr>
+    <tr><td>        775110	 </td><td>Brzostek	</td><td>PL</td></tr>
+    <tr><td>        775136	 </td><td>Brzeznica	</td><td>PL</td></tr>
+    <tr><td>        775155	 </td><td>Brzeziny	</td><td>PL</td></tr>
+    <tr><td>        775359	 </td><td>Bransk	</td><td>PL</td></tr>
+    <tr><td>        775423	 </td><td>Borzecin	</td><td>PL</td></tr>
+    <tr><td>        775736	 </td><td>Bodzentyn	</td><td>PL</td></tr>
+    <tr><td>        775796	 </td><td>Bobowa	</td><td>PL</td></tr>
+    <tr><td>        775820	 </td><td>Blonie	</td><td>PL</td></tr>
+    <tr><td>        775836	 </td><td>Blizyn	</td><td>PL</td></tr>
+    <tr><td>        775840	 </td><td>Blizne	</td><td>PL</td></tr>
+    <tr><td>        775866	 </td><td>Blazowa	</td><td>PL</td></tr>
+    <tr><td>        775886	 </td><td>Bisztynek	</td><td>PL</td></tr>
+    <tr><td>        775888	 </td><td>Biszcza	</td><td>PL</td></tr>
+    <tr><td>        775890	 </td><td>Biskupiec	</td><td>PL</td></tr>
+    <tr><td>        776092	 </td><td>Bialowieza	</td><td>PL</td></tr>
+    <tr><td>        776114	 </td><td>Bialobrzegi	</td><td>PL</td></tr>
+    <tr><td>        776120	 </td><td>Bialobrzegi	</td><td>PL</td></tr>
+    <tr><td>        776144	 </td><td>Bialka Tatrzanska	</td><td>PL</td></tr>
+    <tr><td>        776172	 </td><td>Biala Rawska	</td><td>PL</td></tr>
+    <tr><td>        776178	 </td><td>Biala Piska	</td><td>PL</td></tr>
+    <tr><td>        776214	 </td><td>Besko	</td><td>PL</td></tr>
+    <tr><td>        776252	 </td><td>Belzyce	</td><td>PL</td></tr>
+    <tr><td>        776384	 </td><td>Barczewo	</td><td>PL</td></tr>
+    <tr><td>        776440	 </td><td>Baniocha	</td><td>PL</td></tr>
+    <tr><td>        776677	 </td><td>Annopol	</td><td>PL</td></tr>
+    <tr><td>        776755	 </td><td>Aleksandrow	</td><td>PL</td></tr>
+    <tr><td>        776759	 </td><td>Albigowa	</td><td>PL</td></tr>
+    <tr><td>        776788	 </td><td>Adamow	</td><td>PL</td></tr>
+    <tr><td>        3079897 </td><td>	Zychlin	</td><td>PL</td></tr>
+    <tr><td>        3079942 </td><td>	Zuromin	</td><td>PL</td></tr>
+    <tr><td>        3079969 </td><td>	Zukowo	</td><td>PL</td></tr>
+    <tr><td>        3079986 </td><td>	Zubrzyca Gorna	</td><td>PL</td></tr>
+    <tr><td>        3080007 </td><td>	Zorawina	</td><td>PL</td></tr>
+    <tr><td>        3080058 </td><td>	Zmigrod	</td><td>PL</td></tr>
+    <tr><td>        3080083 </td><td>	Zlotniki Kujawskie	</td><td>PL</td></tr>
+    <tr><td>        3080101 </td><td>	Zloczew	</td><td>PL</td></tr>
+    <tr><td>        3080156 </td><td>	Zielonki	</td><td>PL</td></tr>
+    <tr><td>        3080271 </td><td>	Zernica	</td><td>PL</td></tr>
+    <tr><td>        3080275 </td><td>	Zerkow	</td><td>PL</td></tr>
+    <tr><td>        3080291 </td><td>	Zembrzyce	</td><td>PL</td></tr>
+    <tr><td>        3080302 </td><td>	Zelistrzewo	</td><td>PL</td></tr>
+    <tr><td>        3080367 </td><td>	Zebrzydowice	</td><td>PL</td></tr>
+    <tr><td>        3080368 </td><td>	Zebrzydowice	</td><td>PL</td></tr>
+    <tr><td>        3080369 </td><td>	Zebrzydowice	</td><td>PL</td></tr>
+    <tr><td>        3080411 </td><td>	Zduny	</td><td>PL</td></tr>
+    <tr><td>        3080457 </td><td>	Zbroslawice	</td><td>PL</td></tr>
+    <tr><td>        3080476 </td><td>	Zblewo	</td><td>PL</td></tr>
+    <tr><td>        3080494 </td><td>	Zbaszynek	</td><td>PL</td></tr>
+    <tr><td>        3080495 </td><td>	Zbaszyn	</td><td>PL</td></tr>
+    <tr><td>        3080508 </td><td>	Zawoja	</td><td>PL</td></tr>
+    <tr><td>        3080533 </td><td>	Zawidow	</td><td>PL</td></tr>
+    <tr><td>        3080590 </td><td>	Zator	</td><td>PL</td></tr>
+    <tr><td>        3080652 </td><td>	Zarow	</td><td>PL</td></tr>
+    <tr><td>        3080674 </td><td>	Zarki	</td><td>PL</td></tr>
+    <tr><td>        3080705 </td><td>	Zaniemysl	</td><td>PL</td></tr>
+    <tr><td>        3080757 </td><td>	Zalewo	</td><td>PL</td></tr>
+    <tr><td>        3080807 </td><td>	Zalas	</td><td>PL</td></tr>
+    <tr><td>        3080925 </td><td>	Zagorze	</td><td>PL</td></tr>
+    <tr><td>        3080929 </td><td>	Zagorow	</td><td>PL</td></tr>
+    <tr><td>        3080931 </td><td>	Zagornik	</td><td>PL</td></tr>
+    <tr><td>        3080984 </td><td>	Zabrzeg	</td><td>PL</td></tr>
+    <tr><td>        3081003 </td><td>	Zaborze	</td><td>PL</td></tr>
+    <tr><td>        3081036 </td><td>	Zabnica	</td><td>PL</td></tr>
+    <tr><td>        3081060 </td><td>	Zabierzow	</td><td>PL</td></tr>
+    <tr><td>        3081128 </td><td>	Wysoka	</td><td>PL</td></tr>
+    <tr><td>        3081158 </td><td>	Wyrzysk	</td><td>PL</td></tr>
+    <tr><td>        3081161 </td><td>	Wyry	</td><td>PL</td></tr>
+    <tr><td>        3081300 </td><td>	Wschowa	</td><td>PL</td></tr>
+    <tr><td>        3081350 </td><td>	Wronki	</td><td>PL</td></tr>
+    <tr><td>        3081403 </td><td>	Wozniki	</td><td>PL</td></tr>
+    <tr><td>        3081419 </td><td>	Wolsztyn	</td><td>PL</td></tr>
+    <tr><td>        3081430 </td><td>	Wolow	</td><td>PL</td></tr>
+    <tr><td>        3081471 </td><td>	Wolin	</td><td>PL</td></tr>
+    <tr><td>        3081488 </td><td>	Wolczyn	</td><td>PL</td></tr>
+    <tr><td>        3081495 </td><td>	Wolbrom	</td><td>PL</td></tr>
+    <tr><td>        3081496 </td><td>	Wolborz	</td><td>PL</td></tr>
+    <tr><td>        3081525 </td><td>	Wola Radziszowska	</td><td>PL</td></tr>
+    <tr><td>        3081560 </td><td>	Wola Krzysztoporska	</td><td>PL</td></tr>
+    <tr><td>        3081583 </td><td>	Wola Filipowska	</td><td>PL</td></tr>
+    <tr><td>        3081604 </td><td>	Wola	</td><td>PL</td></tr>
+    <tr><td>        3081636 </td><td>	Wojkowice	</td><td>PL</td></tr>
+    <tr><td>        3081653 </td><td>	Wojcieszow	</td><td>PL</td></tr>
+    <tr><td>        3081701 </td><td>	Wloszakowice	</td><td>PL</td></tr>
+    <tr><td>        3081752 </td><td>	Wladyslawowo	</td><td>PL</td></tr>
+    <tr><td>        3081818 </td><td>	Witnica	</td><td>PL</td></tr>
+    <tr><td>        3081826 </td><td>	Witkowo	</td><td>PL</td></tr>
+    <tr><td>        3081832 </td><td>	Witkowice	</td><td>PL</td></tr>
+    <tr><td>        3081839 </td><td>	Witaszyce	</td><td>PL</td></tr>
+    <tr><td>        3081942 </td><td>	Wilkowice	</td><td>PL</td></tr>
+    <tr><td>        3081947 </td><td>	Wilkow	</td><td>PL</td></tr>
+    <tr><td>        3082016 </td><td>	Wilcza	</td><td>PL</td></tr>
+    <tr><td>        3082130 </td><td>	Wierzchlas	</td><td>PL</td></tr>
+    <tr><td>        3082176 </td><td>	Wieruszow	</td><td>PL</td></tr>
+    <tr><td>        3082192 </td><td>	Wieprz	</td><td>PL</td></tr>
+    <tr><td>        3082193 </td><td>	Wieprz	</td><td>PL</td></tr>
+    <tr><td>        3082319 </td><td>	Wielen	</td><td>PL</td></tr>
+    <tr><td>        3082364 </td><td>	Wiecbork	</td><td>PL</td></tr>
+    <tr><td>        3082411 </td><td>	Wiazow	</td><td>PL</td></tr>
+    <tr><td>        3082500 </td><td>	Wegliniec	</td><td>PL</td></tr>
+    <tr><td>        3082510 </td><td>	Wegierska Gorka	</td><td>PL</td></tr>
+    <tr><td>        3082556 </td><td>	Wasosz	</td><td>PL</td></tr>
+    <tr><td>        3082587 </td><td>	Warta	</td><td>PL</td></tr>
+    <tr><td>        3082611 </td><td>	Warlubie	</td><td>PL</td></tr>
+    <tr><td>        3082678 </td><td>	Walim	</td><td>PL</td></tr>
+    <tr><td>        3082705 </td><td>	Walce	</td><td>PL</td></tr>
+    <tr><td>        3082745 </td><td>	Ustronie Morskie	</td><td>PL</td></tr>
+    <tr><td>        3082785 </td><td>	Unislaw	</td><td>PL</td></tr>
+    <tr><td>        3082837 </td><td>	Ujsoly	</td><td>PL</td></tr>
+    <tr><td>        3082916 </td><td>	Tychowo	</td><td>PL</td></tr>
+    <tr><td>        3082931 </td><td>	Tworog	</td><td>PL</td></tr>
+    <tr><td>        3082933 </td><td>	Tworkow	</td><td>PL</td></tr>
+    <tr><td>        3082938 </td><td>	Twardogora	</td><td>PL</td></tr>
+    <tr><td>        3082966 </td><td>	Turza Slaska	</td><td>PL</td></tr>
+    <tr><td>        3083015 </td><td>	Tulowice	</td><td>PL</td></tr>
+    <tr><td>        3083017 </td><td>	Tuliszkow	</td><td>PL</td></tr>
+    <tr><td>        3083026 </td><td>	Tuczno	</td><td>PL</td></tr>
+    <tr><td>        3083077 </td><td>	Trzemeszno	</td><td>PL</td></tr>
+    <tr><td>        3083087 </td><td>	Trzebunia	</td><td>PL</td></tr>
+    <tr><td>        3083158 </td><td>	Trzcinsko Zdroj	</td><td>PL</td></tr>
+    <tr><td>        3083201 </td><td>	Truskolasy	</td><td>PL</td></tr>
+    <tr><td>        3083264 </td><td>	Torzym	</td><td>PL</td></tr>
+    <tr><td>        3083320 </td><td>	Tomice	</td><td>PL</td></tr>
+    <tr><td>        3083349 </td><td>	Tokarnia	</td><td>PL</td></tr>
+    <tr><td>        3083410 </td><td>	Tenczynek	</td><td>PL</td></tr>
+    <tr><td>        3083441 </td><td>	Tarnow Opolski	</td><td>PL</td></tr>
+    <tr><td>        3083442 </td><td>	Tarnowo Podgorne	</td><td>PL</td></tr>
+    <tr><td>        3083492 </td><td>	Targanice	</td><td>PL</td></tr>
+    <tr><td>        3083616 </td><td>	Sztum	</td><td>PL</td></tr>
+    <tr><td>        3083749 </td><td>	Szczytna	</td><td>PL</td></tr>
+    <tr><td>        3083835 </td><td>	Szczawno-Zdroj	</td><td>PL</td></tr>
+    <tr><td>        3083880 </td><td>	Szamocin	</td><td>PL</td></tr>
+    <tr><td>        3083904 </td><td>	Szadek	</td><td>PL</td></tr>
+    <tr><td>        3083907 </td><td>	Syrynia	</td><td>PL</td></tr>
+    <tr><td>        3084005 </td><td>	Swieta Katarzyna	</td><td>PL</td></tr>
+    <tr><td>        3084024 </td><td>	Swierzawa	</td><td>PL</td></tr>
+    <tr><td>        3084029 </td><td>	Swierklany Gorne	</td><td>PL</td></tr>
+    <tr><td>        3084033 </td><td>	Swierklaniec	</td><td>PL</td></tr>
+    <tr><td>        3084071 </td><td>	Swieciechowa	</td><td>PL</td></tr>
+    <tr><td>        3084142 </td><td>	Suszec	</td><td>PL</td></tr>
+    <tr><td>        3084143 </td><td>	Susz	</td><td>PL</td></tr>
+    <tr><td>        3084178 </td><td>	Suloszowa	</td><td>PL</td></tr>
+    <tr><td>        3084194 </td><td>	Sulkowice	</td><td>PL</td></tr>
+    <tr><td>        3084195 </td><td>	Sulkowice	</td><td>PL</td></tr>
+    <tr><td>        3084213 </td><td>	Borne Sulinowo	</td><td>PL</td></tr>
+    <tr><td>        3084224 </td><td>	Sulikow	</td><td>PL</td></tr>
+    <tr><td>        3084230 </td><td>	Sulejow	</td><td>PL</td></tr>
+    <tr><td>        3084237 </td><td>	Sulecin	</td><td>PL</td></tr>
+    <tr><td>        3084258 </td><td>	Suchy Las	</td><td>PL</td></tr>
+    <tr><td>        3084300 </td><td>	Sucha Beskidzka	</td><td>PL</td></tr>
+    <tr><td>        3084312 </td><td>	Subkowy	</td><td>PL</td></tr>
+    <tr><td>        3084324 </td><td>	Studzionka	</td><td>PL</td></tr>
+    <tr><td>        3084396 </td><td>	Strzelno	</td><td>PL</td></tr>
+    <tr><td>        3084421 </td><td>	Strzelce Krajenskie	</td><td>PL</td></tr>
+    <tr><td>        3084444 </td><td>	Strzebin	</td><td>PL</td></tr>
+    <tr><td>        3084449 </td><td>	Strzalkowo	</td><td>PL</td></tr>
+    <tr><td>        3084457 </td><td>	Stryszow	</td><td>PL</td></tr>
+    <tr><td>        3084464 </td><td>	Strykow	</td><td>PL</td></tr>
+    <tr><td>        3084507 </td><td>	Stroza	</td><td>PL</td></tr>
+    <tr><td>        3084527 </td><td>	Straszyn	</td><td>PL</td></tr>
+    <tr><td>        3084641 </td><td>	Stezyca	</td><td>PL</td></tr>
+    <tr><td>        3084647 </td><td>	Steszew	</td><td>PL</td></tr>
+    <tr><td>        3084660 </td><td>	Stepnica	</td><td>PL</td></tr>
+    <tr><td>        3084673 </td><td>	Stegna	</td><td>PL</td></tr>
+    <tr><td>        3084807 </td><td>	Starozreby	</td><td>PL</td></tr>
+    <tr><td>        3084876 </td><td>	Stare Kurowo	</td><td>PL</td></tr>
+    <tr><td>        3084978 </td><td>	Stanowice	</td><td>PL</td></tr>
+    <tr><td>        3085019 </td><td>	Stanislaw Dolny	</td><td>PL</td></tr>
+    <tr><td>        3085047 </td><td>	Sroda Slaska	</td><td>PL</td></tr>
+    <tr><td>        3085069 </td><td>	Spytkowice	</td><td>PL</td></tr>
+    <tr><td>        3085070 </td><td>	Spytkowice	</td><td>PL</td></tr>
+    <tr><td>        3085158 </td><td>	Sompolno	</td><td>PL</td></tr>
+    <tr><td>        3085159 </td><td>	Somonino	</td><td>PL</td></tr>
+    <tr><td>        3085182 </td><td>	Szczerbice	</td><td>PL</td></tr>
+    <tr><td>        3085357 </td><td>	Smolec	</td><td>PL</td></tr>
+    <tr><td>        3085391 </td><td>	Smigiel	</td><td>PL</td></tr>
+    <tr><td>        3085414 </td><td>	Smetowo Graniczne	</td><td>PL</td></tr>
+    <tr><td>        3085494 </td><td>	Slubice	</td><td>PL</td></tr>
+    <tr><td>        3085520 </td><td>	Slonsk	</td><td>PL</td></tr>
+    <tr><td>        3085565 </td><td>	Sliwice	</td><td>PL</td></tr>
+    <tr><td>        3085578 </td><td>	Slesin	</td><td>PL</td></tr>
+    <tr><td>        3085584 </td><td>	Slemien	</td><td>PL</td></tr>
+    <tr><td>        3085609 </td><td>	Slawoborze	</td><td>PL</td></tr>
+    <tr><td>        3085610 </td><td>	Slawno	</td><td>PL</td></tr>
+    <tr><td>        3085622 </td><td>	Slawiecice	</td><td>PL</td></tr>
+    <tr><td>        3085668 </td><td>	Skrzyszow	</td><td>PL</td></tr>
+    <tr><td>        3085766 </td><td>	Skorcz	</td><td>PL</td></tr>
+    <tr><td>        3085786 </td><td>	Skoczow	</td><td>PL</td></tr>
+    <tr><td>        3085802 </td><td>	Skepe	</td><td>PL</td></tr>
+    <tr><td>        3085809 </td><td>	Skawica	</td><td>PL</td></tr>
+    <tr><td>        3085826 </td><td>	Skarszewy	</td><td>PL</td></tr>
+    <tr><td>        3085970 </td><td>	Sierakowice	</td><td>PL</td></tr>
+    <tr><td>        3085974 </td><td>	Sierakow	</td><td>PL</td></tr>
+    <tr><td>        3085980 </td><td>	Siepraw	</td><td>PL</td></tr>
+    <tr><td>        3086001 </td><td>	Sieniawa	</td><td>PL</td></tr>
+    <tr><td>        3086106 </td><td>	Siechnice	</td><td>PL</td></tr>
+    <tr><td>        3086110 </td><td>	Sidzina	</td><td>PL</td></tr>
+    <tr><td>        3086111 </td><td>	Sidzina	</td><td>PL</td></tr>
+    <tr><td>        3086153 </td><td>	Sepolno Krajenskie	</td><td>PL</td></tr>
+    <tr><td>        3086288 </td><td>	Sanniki	</td><td>PL</td></tr>
+    <tr><td>        3086371 </td><td>	Sadlinki	</td><td>PL</td></tr>
+    <tr><td>        3086377 </td><td>	Sadki	</td><td>PL</td></tr>
+    <tr><td>        3086391 </td><td>	Rzyki	</td><td>PL</td></tr>
+    <tr><td>        3086415 </td><td>	Rzeszotary	</td><td>PL</td></tr>
+    <tr><td>        3086480 </td><td>	Rzaska	</td><td>PL</td></tr>
+    <tr><td>        3086524 </td><td>	Ryjewo	</td><td>PL</td></tr>
+    <tr><td>        3086527 </td><td>	Rydzyna	</td><td>PL</td></tr>
+    <tr><td>        3086533 </td><td>	Ryczywol	</td><td>PL</td></tr>
+    <tr><td>        3086536 </td><td>	Ryczow	</td><td>PL</td></tr>
+    <tr><td>        3086574 </td><td>	Rybno	</td><td>PL</td></tr>
+    <tr><td>        3086608 </td><td>	Rybarzowice	</td><td>PL</td></tr>
+    <tr><td>        3086732 </td><td>	Rudy	</td><td>PL</td></tr>
+    <tr><td>        3086760 </td><td>	Rudnik	</td><td>PL</td></tr>
+    <tr><td>        3087072 </td><td>	Rogozno	</td><td>PL</td></tr>
+    <tr><td>        3087076 </td><td>	Rogoznik	</td><td>PL</td></tr>
+    <tr><td>        3087097 </td><td>	Rogowo	</td><td>PL</td></tr>
+    <tr><td>        3087112 </td><td>	Rogow	</td><td>PL</td></tr>
+    <tr><td>        3087144 </td><td>	Roczyny	</td><td>PL</td></tr>
+    <tr><td>        3087256 </td><td>	Redziny	</td><td>PL</td></tr>
+    <tr><td>        3087287 </td><td>	Recz	</td><td>PL</td></tr>
+    <tr><td>        3087333 </td><td>	Raszkow	</td><td>PL</td></tr>
+    <tr><td>        3087383 </td><td>	Rakoniewice	</td><td>PL</td></tr>
+    <tr><td>        3087410 </td><td>	Radzyn Chelminski	</td><td>PL</td></tr>
+    <tr><td>        3087415 </td><td>	Radziszow	</td><td>PL</td></tr>
+    <tr><td>        3087427 </td><td>	Radziejow	</td><td>PL</td></tr>
+    <tr><td>        3087431 </td><td>	Radziechowy	</td><td>PL</td></tr>
+    <tr><td>        3087520 </td><td>	Radocza	</td><td>PL</td></tr>
+    <tr><td>        3087601 </td><td>	Rabka-Zdroj	</td><td>PL</td></tr>
+    <tr><td>        3087613 </td><td>	Raba Wyzna	</td><td>PL</td></tr>
+    <tr><td>        3087640 </td><td>	Puszczykowo	</td><td>PL</td></tr>
+    <tr><td>        3087691 </td><td>	Puck	</td><td>PL</td></tr>
+    <tr><td>        3087701 </td><td>	Pszow	</td><td>PL</td></tr>
+    <tr><td>        3087708 </td><td>	Pszczolki	</td><td>PL</td></tr>
+    <tr><td>        3087769 </td><td>	Przytoczna	</td><td>PL</td></tr>
+    <tr><td>        3087771 </td><td>	Przytkowice	</td><td>PL</td></tr>
+    <tr><td>        3087773 </td><td>	Przyszowice	</td><td>PL</td></tr>
+    <tr><td>        3087847 </td><td>	Przygodzice	</td><td>PL</td></tr>
+    <tr><td>        3087975 </td><td>	Przeginia	</td><td>PL</td></tr>
+    <tr><td>        3088006 </td><td>	Przeclaw	</td><td>PL</td></tr>
+    <tr><td>        3088011 </td><td>	Przeciszow	</td><td>PL</td></tr>
+    <tr><td>        3088017 </td><td>	Przechlewo	</td><td>PL</td></tr>
+    <tr><td>        3088033 </td><td>	Pruszcz	</td><td>PL</td></tr>
+    <tr><td>        3088060 </td><td>	Prusice	</td><td>PL</td></tr>
+    <tr><td>        3088067 </td><td>	Pruchna	</td><td>PL</td></tr>
+    <tr><td>        3088096 </td><td>	Prochowice	</td><td>PL</td></tr>
+    <tr><td>        3088273 </td><td>	Poreba	</td><td>PL</td></tr>
+    <tr><td>        3088281 </td><td>	Poraj	</td><td>PL</td></tr>
+    <tr><td>        3088290 </td><td>	Porabka	</td><td>PL</td></tr>
+    <tr><td>        3088324 </td><td>	Popielow	</td><td>PL</td></tr>
+    <tr><td>        3088345 </td><td>	Poniec	</td><td>PL</td></tr>
+    <tr><td>        3088427 </td><td>	Polomia	</td><td>PL</td></tr>
+    <tr><td>        3088477 </td><td>	Polczyn-Zdroj	</td><td>PL</td></tr>
+    <tr><td>        3088492 </td><td>	Polanow	</td><td>PL</td></tr>
+    <tr><td>        3088496 </td><td>	Polanica-Zdroj	</td><td>PL</td></tr>
+    <tr><td>        3088504 </td><td>	Polajewo	</td><td>PL</td></tr>
+    <tr><td>        3088535 </td><td>	Pogwizdow	</td><td>PL</td></tr>
+    <tr><td>        3088548 </td><td>	Pogorzela	</td><td>PL</td></tr>
+    <tr><td>        3088574 </td><td>	Podwilk	</td><td>PL</td></tr>
+    <tr><td>        3088710 </td><td>	Poddebice	</td><td>PL</td></tr>
+    <tr><td>        3088749 </td><td>	Pobiedziska	</td><td>PL</td></tr>
+    <tr><td>        3088759 </td><td>	Pniewy	</td><td>PL</td></tr>
+    <tr><td>        3088931 </td><td>	Pisarzowice	</td><td>PL</td></tr>
+    <tr><td>        3088977 </td><td>	Piotrkow Kujawski	</td><td>PL</td></tr>
+    <tr><td>        3089010 </td><td>	Pilica	</td><td>PL</td></tr>
+    <tr><td>        3089019 </td><td>	Pilchowice	</td><td>PL</td></tr>
+    <tr><td>        3089025 </td><td>	Pilawa Gorna	</td><td>PL</td></tr>
+    <tr><td>        3089048 </td><td>	Pietrzykowice	</td><td>PL</td></tr>
+    <tr><td>        3089057 </td><td>	Pietrowice Wielkie	</td><td>PL</td></tr>
+    <tr><td>        3089093 </td><td>	Piersciec	</td><td>PL</td></tr>
+    <tr><td>        3089114 </td><td>	Pielgrzymowice	</td><td>PL</td></tr>
+    <tr><td>        3089123 </td><td>	Piekielnik	</td><td>PL</td></tr>
+    <tr><td>        3089152 </td><td>	Piechowice	</td><td>PL</td></tr>
+    <tr><td>        3089173 </td><td>	Piatek	</td><td>PL</td></tr>
+    <tr><td>        3089217 </td><td>	Piaski	</td><td>PL</td></tr>
+    <tr><td>        3089238 </td><td>	Piasek	</td><td>PL</td></tr>
+    <tr><td>        3089286 </td><td>	Pelczyce	</td><td>PL</td></tr>
+    <tr><td>        3089298 </td><td>	Peczniew	</td><td>PL</td></tr>
+    <tr><td>        3089310 </td><td>	Pcim	</td><td>PL</td></tr>
+    <tr><td>        3089340 </td><td>	Pawlowice	</td><td>PL</td></tr>
+    <tr><td>        3089392 </td><td>	Paslek	</td><td>PL</td></tr>
+    <tr><td>        3089496 </td><td>	Paniowki	</td><td>PL</td></tr>
+    <tr><td>        3089547 </td><td>	Pakosc	</td><td>PL</td></tr>
+    <tr><td>        3089553 </td><td>	Pajeczno	</td><td>PL</td></tr>
+    <tr><td>        3089583 </td><td>	Ozimek	</td><td>PL</td></tr>
+    <tr><td>        3089642 </td><td>	Otmuchow	</td><td>PL</td></tr>
+    <tr><td>        3089670 </td><td>	Ostrzeszow	</td><td>PL</td></tr>
+    <tr><td>        3089681 </td><td>	Ostrowy nad Oksza	</td><td>PL</td></tr>
+    <tr><td>        3089767 </td><td>	Ostrorog	</td><td>PL</td></tr>
+    <tr><td>        3089832 </td><td>	Osno Lubuskie	</td><td>PL</td></tr>
+    <tr><td>        3089876 </td><td>	Osina	</td><td>PL</td></tr>
+    <tr><td>        3089881 </td><td>	Osielsko	</td><td>PL</td></tr>
+    <tr><td>        3089882 </td><td>	Osielec	</td><td>PL</td></tr>
+    <tr><td>        3089891 </td><td>	Osiek nad Notecia	</td><td>PL</td></tr>
+    <tr><td>        3089924 </td><td>	Osiek	</td><td>PL</td></tr>
+    <tr><td>        3089934 </td><td>	Osieczna	</td><td>PL</td></tr>
+    <tr><td>        3089941 </td><td>	Osieciny	</td><td>PL</td></tr>
+    <tr><td>        3089942 </td><td>	Osie	</td><td>PL</td></tr>
+    <tr><td>        3089987 </td><td>	Ornontowice	</td><td>PL</td></tr>
+    <tr><td>        3090066 </td><td>	Opatowek	</td><td>PL</td></tr>
+    <tr><td>        3090104 </td><td>	Olsztyn	</td><td>PL</td></tr>
+    <tr><td>        3090315 </td><td>	Odolanow	</td><td>PL</td></tr>
+    <tr><td>        3090360 </td><td>	Ochaby	</td><td>PL</td></tr>
+    <tr><td>        3090364 </td><td>	Obrzycko	</td><td>PL</td></tr>
+    <tr><td>        3090502 </td><td>	Nowy Dwor Gdanski	</td><td>PL</td></tr>
+    <tr><td>        3090553 </td><td>	Nowogrod Bobrzanski	</td><td>PL</td></tr>
+    <tr><td>        3090597 </td><td>	Nowe Skalmierzyce	</td><td>PL</td></tr>
+    <tr><td>        3090616 </td><td>	Nowe Miasteczko	</td><td>PL</td></tr>
+    <tr><td>        3090660 </td><td>	Nowe	</td><td>PL</td></tr>
+    <tr><td>        3090673 </td><td>	Nowa Wies Wielka	</td><td>PL</td></tr>
+    <tr><td>        3090690 </td><td>	Nowa Wies Leborska	</td><td>PL</td></tr>
+    <tr><td>        3090759 </td><td>	Nowa Wies	</td><td>PL</td></tr>
+    <tr><td>        3090907 </td><td>	Nieszawa	</td><td>PL</td></tr>
+    <tr><td>        3090951 </td><td>	Niemodlin	</td><td>PL</td></tr>
+    <tr><td>        3090967 </td><td>	Niemcza	</td><td>PL</td></tr>
+    <tr><td>        3091031 </td><td>	Niedobczyce	</td><td>PL</td></tr>
+    <tr><td>        3091058 </td><td>	Niechanowo	</td><td>PL</td></tr>
+    <tr><td>        3091095 </td><td>	Nedza	</td><td>PL</td></tr>
+    <tr><td>        3091135 </td><td>	Naprawa	</td><td>PL</td></tr>
+    <tr><td>        3091154 </td><td>	Naklo	</td><td>PL</td></tr>
+    <tr><td>        3091253 </td><td>	Mysliborz	</td><td>PL</td></tr>
+    <tr><td>        3091265 </td><td>	Myslachowice	</td><td>PL</td></tr>
+    <tr><td>        3091297 </td><td>	Murcki	</td><td>PL</td></tr>
+    <tr><td>        3091332 </td><td>	Mrzezino	</td><td>PL</td></tr>
+    <tr><td>        3091351 </td><td>	Mrocza	</td><td>PL</td></tr>
+    <tr><td>        3091371 </td><td>	Moszczenica	</td><td>PL</td></tr>
+    <tr><td>        3091407 </td><td>	Mosina	</td><td>PL</td></tr>
+    <tr><td>        3091462 </td><td>	Morag	</td><td>PL</td></tr>
+    <tr><td>        3091528 </td><td>	Mogilany	</td><td>PL</td></tr>
+    <tr><td>        3091605 </td><td>	Mnich	</td><td>PL</td></tr>
+    <tr><td>        3091757 </td><td>	Miloslaw	</td><td>PL</td></tr>
+    <tr><td>        3091763 </td><td>	Milomlyn	</td><td>PL</td></tr>
+    <tr><td>        3091780 </td><td>	Milkowice	</td><td>PL</td></tr>
+    <tr><td>        3091861 </td><td>	Mieszkowice	</td><td>PL</td></tr>
+    <tr><td>        3091874 </td><td>	Miescisko	</td><td>PL</td></tr>
+    <tr><td>        3091913 </td><td>	Mielno	</td><td>PL</td></tr>
+    <tr><td>        3091953 </td><td>	Miekinia	</td><td>PL</td></tr>
+    <tr><td>        3091957 </td><td>	Miejska Gorka	</td><td>PL</td></tr>
+    <tr><td>        3091974 </td><td>	Miedzylesie	</td><td>PL</td></tr>
+    <tr><td>        3091983 </td><td>	Miedzychod	</td><td>PL</td></tr>
+    <tr><td>        3091988 </td><td>	Miedzybrodzie Bialskie	</td><td>PL</td></tr>
+    <tr><td>        3091997 </td><td>	Miedzno	</td><td>PL</td></tr>
+    <tr><td>        3092024 </td><td>	Miechow Charsznica	</td><td>PL</td></tr>
+    <tr><td>        3092080 </td><td>	Miastko	</td><td>PL</td></tr>
+    <tr><td>        3092162 </td><td>	Mazancowice	</td><td>PL</td></tr>
+    <tr><td>        3092197 </td><td>	Maszewo	</td><td>PL</td></tr>
+    <tr><td>        3092276 </td><td>	Marklowice	</td><td>PL</td></tr>
+    <tr><td>        3092402 </td><td>	Malomice	</td><td>PL</td></tr>
+    <tr><td>        3092468 </td><td>	Malczyce	</td><td>PL</td></tr>
+    <tr><td>        3092639 </td><td>	Lwowek	</td><td>PL</td></tr>
+    <tr><td>        3092643 </td><td>	Luzino	</td><td>PL</td></tr>
+    <tr><td>        3092742 </td><td>	Ludzmierz	</td><td>PL</td></tr>
+    <tr><td>        3092757 </td><td>	Ludwikowice Klodzkie	</td><td>PL</td></tr>
+    <tr><td>        3092813 </td><td>	Lubsko	</td><td>PL</td></tr>
+    <tr><td>        3092818 </td><td>	Lubraniec	</td><td>PL</td></tr>
+    <tr><td>        3092828 </td><td>	Lubowidz	</td><td>PL</td></tr>
+    <tr><td>        3092867 </td><td>	Lubomia	</td><td>PL</td></tr>
+    <tr><td>        3092964 </td><td>	Lubien	</td><td>PL</td></tr>
+    <tr><td>        3092988 </td><td>	Lubichowo	</td><td>PL</td></tr>
+    <tr><td>        3093028 </td><td>	Lubawa	</td><td>PL</td></tr>
+    <tr><td>        3093029 </td><td>	Lubasz	</td><td>PL</td></tr>
+    <tr><td>        3093136 </td><td>	Lodygowice	</td><td>PL</td></tr>
+    <tr><td>        3093150 </td><td>	Lobzenica	</td><td>PL</td></tr>
+    <tr><td>        3093237 </td><td>	Lipusz	</td><td>PL</td></tr>
+    <tr><td>        3093263 </td><td>	Lipowa	</td><td>PL</td></tr>
+    <tr><td>        3093268 </td><td>	Lipno	</td><td>PL</td></tr>
+    <tr><td>        3093282 </td><td>	Lipnica Wielka	</td><td>PL</td></tr>
+    <tr><td>        3093298 </td><td>	Lipka	</td><td>PL</td></tr>
+    <tr><td>        3093350 </td><td>	Lipiany	</td><td>PL</td></tr>
+    <tr><td>        3093433 </td><td>	Ligota	</td><td>PL</td></tr>
+    <tr><td>        3093458 </td><td>	Libertow	</td><td>PL</td></tr>
+    <tr><td>        3093577 </td><td>	Lesnica	</td><td>PL</td></tr>
+    <tr><td>        3093589 </td><td>	Lesna	</td><td>PL</td></tr>
+    <tr><td>        3093592 </td><td>	Lesna	</td><td>PL</td></tr>
+    <tr><td>        3093636 </td><td>	Lelow	</td><td>PL</td></tr>
+    <tr><td>        3093649 </td><td>	Leknica	</td><td>PL</td></tr>
+    <tr><td>        3093664 </td><td>	Lekawica	</td><td>PL</td></tr>
+    <tr><td>        3093681 </td><td>	Legowo	</td><td>PL</td></tr>
+    <tr><td>        3093906 </td><td>	Lasin	</td><td>PL</td></tr>
+    <tr><td>        3093935 </td><td>	Lanckorona	</td><td>PL</td></tr>
+    <tr><td>        3093941 </td><td>	Lambinowice	</td><td>PL</td></tr>
+    <tr><td>        3094003 </td><td>	Lagiewniki	</td><td>PL</td></tr>
+    <tr><td>        3094045 </td><td>	Lachowice	</td><td>PL</td></tr>
+    <tr><td>        3094052 </td><td>	Labiszyn	</td><td>PL</td></tr>
+    <tr><td>        3094072 </td><td>	Kwilcz	</td><td>PL</td></tr>
+    <tr><td>        3094189 </td><td>	Kurzetnik	</td><td>PL</td></tr>
+    <tr><td>        3094258 </td><td>	Kunice Zarskie	</td><td>PL</td></tr>
+    <tr><td>        3094303 </td><td>	Kudowa-Zdroj	</td><td>PL</td></tr>
+    <tr><td>        3094355 </td><td>	Ksiaz Wielkopolski	</td><td>PL</td></tr>
+    <tr><td>        3094361 </td><td>	Ksiazenice	</td><td>PL</td></tr>
+    <tr><td>        3094370 </td><td>	Ksawerow	</td><td>PL</td></tr>
+    <tr><td>        3094408 </td><td>	Krzyz Wielkopolski	</td><td>PL</td></tr>
+    <tr><td>        3094490 </td><td>	Krzeszowice	</td><td>PL</td></tr>
+    <tr><td>        3094525 </td><td>	Krzemieniewo	</td><td>PL</td></tr>
+    <tr><td>        3094549 </td><td>	Krzanowice	</td><td>PL</td></tr>
+    <tr><td>        3094585 </td><td>	Kruszwica	</td><td>PL</td></tr>
+    <tr><td>        3094597 </td><td>	Krupski Mlyn	</td><td>PL</td></tr>
+    <tr><td>        3094638 </td><td>	Krosniewice	</td><td>PL</td></tr>
+    <tr><td>        3094690 </td><td>	Krobia	</td><td>PL</td></tr>
+    <tr><td>        3094813 </td><td>	Krajenka	</td><td>PL</td></tr>
+    <tr><td>        3094831 </td><td>	Kozy	</td><td>PL</td></tr>
+    <tr><td>        3094832 </td><td>	Kozuchow	</td><td>PL</td></tr>
+    <tr><td>        3094852 </td><td>	Kozmin Wielkopolski	</td><td>PL</td></tr>
+    <tr><td>        3094871 </td><td>	Kozle	</td><td>PL</td></tr>
+    <tr><td>        3094953 </td><td>	Kowalewo Pomorskie	</td><td>PL</td></tr>
+    <tr><td>        3094976 </td><td>	Kowale	</td><td>PL</td></tr>
+    <tr><td>        3094981 </td><td>	Kowal	</td><td>PL</td></tr>
+    <tr><td>        3095013 </td><td>	Kotlin	</td><td>PL</td></tr>
+    <tr><td>        3095044 </td><td>	Koszarawa	</td><td>PL</td></tr>
+    <tr><td>        3095058 </td><td>	Kostrzyn	</td><td>PL</td></tr>
+    <tr><td>        3095110 </td><td>	Koszecin	</td><td>PL</td></tr>
+    <tr><td>        3095140 </td><td>	Koscielisko	</td><td>PL</td></tr>
+    <tr><td>        3095194 </td><td>	Kornik	</td><td>PL</td></tr>
+    <tr><td>        3095202 </td><td>	Korfantow	</td><td>PL</td></tr>
+    <tr><td>        3095311 </td><td>	Konopiska	</td><td>PL</td></tr>
+    <tr><td>        3095332 </td><td>	Koniakow	</td><td>PL</td></tr>
+    <tr><td>        3095336 </td><td>	Konczyce Male	</td><td>PL</td></tr>
+    <tr><td>        3095367 </td><td>	Komprachcice	</td><td>PL</td></tr>
+    <tr><td>        3095396 </td><td>	Komorniki	</td><td>PL</td></tr>
+    <tr><td>        3095413 </td><td>	Koluszki	</td><td>PL</td></tr>
+    <tr><td>        3095421 </td><td>	Kolonowskie	</td><td>PL</td></tr>
+    <tr><td>        3095819 </td><td>	Koleczkowo	</td><td>PL</td></tr>
+    <tr><td>        3095833 </td><td>	Kolbudy	</td><td>PL</td></tr>
+    <tr><td>        3095874 </td><td>	Koczala	</td><td>PL</td></tr>
+    <tr><td>        3095910 </td><td>	Kochanowice	</td><td>PL</td></tr>
+    <tr><td>        3095926 </td><td>	Kobylnica	</td><td>PL</td></tr>
+    <tr><td>        3095931 </td><td>	Kobylin	</td><td>PL</td></tr>
+    <tr><td>        3095951 </td><td>	Kobyla Gora	</td><td>PL</td></tr>
+    <tr><td>        3095958 </td><td>	Kobior	</td><td>PL</td></tr>
+    <tr><td>        3095961 </td><td>	Kobierzyce	</td><td>PL</td></tr>
+    <tr><td>        3095964 </td><td>	Kobiernice	</td><td>PL</td></tr>
+    <tr><td>        3096002 </td><td>	Klucze	</td><td>PL</td></tr>
+    <tr><td>        3096048 </td><td>	Klomnice	</td><td>PL</td></tr>
+    <tr><td>        3096079 </td><td>	Klodawa	</td><td>PL</td></tr>
+    <tr><td>        3096123 </td><td>	Kleszczow	</td><td>PL</td></tr>
+    <tr><td>        3096160 </td><td>	Kleczew	</td><td>PL</td></tr>
+    <tr><td>        3096162 </td><td>	Klecza Dolna	</td><td>PL</td></tr>
+    <tr><td>        3096208 </td><td>	Kisielice	</td><td>PL</td></tr>
+    <tr><td>        3096292 </td><td>	Kielczow	</td><td>PL</td></tr>
+    <tr><td>        3096353 </td><td>	Kepice	</td><td>PL</td></tr>
+    <tr><td>        3096385 </td><td>	Kcynia	</td><td>PL</td></tr>
+    <tr><td>        3096392 </td><td>	Kazmierz	</td><td>PL</td></tr>
+    <tr><td>        3096400 </td><td>	Kazimierz Biskupi	</td><td>PL</td></tr>
+    <tr><td>        3096494 </td><td>	Kaszow	</td><td>PL</td></tr>
+    <tr><td>        3096630 </td><td>	Karlino	</td><td>PL</td></tr>
+    <tr><td>        3096640 </td><td>	Kargowa	</td><td>PL</td></tr>
+    <tr><td>        3096687 </td><td>	Kaniow	</td><td>PL</td></tr>
+    <tr><td>        3096763 </td><td>	Kamiensk	</td><td>PL</td></tr>
+    <tr><td>        3096791 </td><td>	Kamien Krajenski	</td><td>PL</td></tr>
+    <tr><td>        3096796 </td><td>	Kamieniec Wroclawski	</td><td>PL</td></tr>
+    <tr><td>        3096847 </td><td>	Kamesznica	</td><td>PL</td></tr>
+    <tr><td>        3096964 </td><td>	Kaczyce	</td><td>PL</td></tr>
+    <tr><td>        3096966 </td><td>	Kaczory	</td><td>PL</td></tr>
+    <tr><td>        3096986 </td><td>	Wielki Kack	</td><td>PL</td></tr>
+    <tr><td>        3096999 </td><td>	Jutrosin	</td><td>PL</td></tr>
+    <tr><td>        3097006 </td><td>	Juszczyn	</td><td>PL</td></tr>
+    <tr><td>        3097043 </td><td>	Jugow	</td><td>PL</td></tr>
+    <tr><td>        3097219 </td><td>	Jerzmanowice	</td><td>PL</td></tr>
+    <tr><td>        3097233 </td><td>	Jemielnica	</td><td>PL</td></tr>
+    <tr><td>        3097241 </td><td>	Jelesnia	</td><td>PL</td></tr>
+    <tr><td>        3097272 </td><td>	Jejkowice	</td><td>PL</td></tr>
+    <tr><td>        3097301 </td><td>	Jedlina-Zdroj	</td><td>PL</td></tr>
+    <tr><td>        3097327 </td><td>	Jaworzynka	</td><td>PL</td></tr>
+    <tr><td>        3097328 </td><td>	Jaworzyna Slaska	</td><td>PL</td></tr>
+    <tr><td>        3097355 </td><td>	Jawornik	</td><td>PL</td></tr>
+    <tr><td>        3097472 </td><td>	Jasienica	</td><td>PL</td></tr>
+    <tr><td>        3097480 </td><td>	Jasien	</td><td>PL</td></tr>
+    <tr><td>        3097594 </td><td>	Janowiec Wielkopolski	</td><td>PL</td></tr>
+    <tr><td>        3097599 </td><td>	Janowice Wielkie	</td><td>PL</td></tr>
+    <tr><td>        3097651 </td><td>	Jankowice Rybnickie	</td><td>PL</td></tr>
+    <tr><td>        3097660 </td><td>	Jankowice	</td><td>PL</td></tr>
+    <tr><td>        3097808 </td><td>	Jablonowo Pomorskie	</td><td>PL</td></tr>
+    <tr><td>        3097823 </td><td>	Jablonka	</td><td>PL</td></tr>
+    <tr><td>        3097833 </td><td>	Izdebnik	</td><td>PL</td></tr>
+    <tr><td>        3097841 </td><td>	Izbica Kujawska	</td><td>PL</td></tr>
+    <tr><td>        3097865 </td><td>	Istebna	</td><td>PL</td></tr>
+    <tr><td>        3097869 </td><td>	Inwald	</td><td>PL</td></tr>
+    <tr><td>        3097871 </td><td>	Insko	</td><td>PL</td></tr>
+    <tr><td>        3097886 </td><td>	Imielin	</td><td>PL</td></tr>
+    <tr><td>        3097896 </td><td>	Ilowa	</td><td>PL</td></tr>
+    <tr><td>        3097935 </td><td>	Huta Stara B	</td><td>PL</td></tr>
+    <tr><td>        3098007 </td><td>	Herby	</td><td>PL</td></tr>
+    <tr><td>        3098015 </td><td>	Henrykow	</td><td>PL</td></tr>
+    <tr><td>        3098033 </td><td>	Hazlach	</td><td>PL</td></tr>
+    <tr><td>        3098182 </td><td>	Grzechynia	</td><td>PL</td></tr>
+    <tr><td>        3098267 </td><td>	Gromadka	</td><td>PL</td></tr>
+    <tr><td>        3098277 </td><td>	Grojec	</td><td>PL</td></tr>
+    <tr><td>        3098333 </td><td>	Grodkow	</td><td>PL</td></tr>
+    <tr><td>        3098394 </td><td>	Granowo	</td><td>PL</td></tr>
+    <tr><td>        3098470 </td><td>	Grabow nad Prosna	</td><td>PL</td></tr>
+    <tr><td>        3098583 </td><td>	Gozdnica	</td><td>PL</td></tr>
+    <tr><td>        3098626 </td><td>	Gostyn	</td><td>PL</td></tr>
+    <tr><td>        3098665 </td><td>	Goscino	</td><td>PL</td></tr>
+    <tr><td>        3098686 </td><td>	Goscicino	</td><td>PL</td></tr>
+    <tr><td>        3098699 </td><td>	Gorzyczki	</td><td>PL</td></tr>
+    <tr><td>        3098702 </td><td>	Gorzyce Wielkie	</td><td>PL</td></tr>
+    <tr><td>        3098709 </td><td>	Gorzyce	</td><td>PL</td></tr>
+    <tr><td>        3098723 </td><td>	Gorzow Slaski	</td><td>PL</td></tr>
+    <tr><td>        3098735 </td><td>	Gorzkowice	</td><td>PL</td></tr>
+    <tr><td>        3098815 </td><td>	Gorki Wielkie	</td><td>PL</td></tr>
+    <tr><td>        3098898 </td><td>	Gora	</td><td>PL</td></tr>
+    <tr><td>        3098901 </td><td>	Gora	</td><td>PL</td></tr>
+    <tr><td>        3098923 </td><td>	Goluchow	</td><td>PL</td></tr>
+    <tr><td>        3098938 </td><td>	Golkowice	</td><td>PL</td></tr>
+    <tr><td>        3098949 </td><td>	Golina	</td><td>PL</td></tr>
+    <tr><td>        3098950 </td><td>	Golina	</td><td>PL</td></tr>
+    <tr><td>        3098959 </td><td>	Goleszow	</td><td>PL</td></tr>
+    <tr><td>        3098991 </td><td>	Golczewo	</td><td>PL</td></tr>
+    <tr><td>        3099016 </td><td>	Golancz	</td><td>PL</td></tr>
+    <tr><td>        3099062 </td><td>	Godziszka	</td><td>PL</td></tr>
+    <tr><td>        3099084 </td><td>	Godow	</td><td>PL</td></tr>
+    <tr><td>        3099095 </td><td>	Goczalkowice Zdroj	</td><td>PL</td></tr>
+    <tr><td>        3099120 </td><td>	Gniewkowo	</td><td>PL</td></tr>
+    <tr><td>        3099125 </td><td>	Gniewino	</td><td>PL</td></tr>
+    <tr><td>        3099129 </td><td>	Gniechowice	</td><td>PL</td></tr>
+    <tr><td>        3099174 </td><td>	Glubczyce	</td><td>PL</td></tr>
+    <tr><td>        3099192 </td><td>	Glowczyce	</td><td>PL</td></tr>
+    <tr><td>        3099209 </td><td>	Glogowek	</td><td>PL</td></tr>
+    <tr><td>        3099214 </td><td>	Glogoczow	</td><td>PL</td></tr>
+    <tr><td>        3099352 </td><td>	Gilowice	</td><td>PL</td></tr>
+    <tr><td>        3099452 </td><td>	Gaszowice	</td><td>PL</td></tr>
+    <tr><td>        3099492 </td><td>	Gardeja	</td><td>PL</td></tr>
+    <tr><td>        3099498 </td><td>	Garcz	</td><td>PL</td></tr>
+    <tr><td>        3099629 </td><td>	Frydrychowice	</td><td>PL</td></tr>
+    <tr><td>        3099679 </td><td>	Filipowice	</td><td>PL</td></tr>
+    <tr><td>        3099783 </td><td>	Dziwnow	</td><td>PL</td></tr>
+    <tr><td>        3099842 </td><td>	Dzierzgon	</td><td>PL</td></tr>
+    <tr><td>        3099873 </td><td>	Dziergowice	</td><td>PL</td></tr>
+    <tr><td>        3099923 </td><td>	Dzialoszyn	</td><td>PL</td></tr>
+    <tr><td>        3099993 </td><td>	Duszniki	</td><td>PL</td></tr>
+    <tr><td>        3100116 </td><td>	Drogomysl	</td><td>PL</td></tr>
+    <tr><td>        3100124 </td><td>	Drobin	</td><td>PL</td></tr>
+    <tr><td>        3100127 </td><td>	Drezdenko	</td><td>PL</td></tr>
+    <tr><td>        3100139 </td><td>	Drawsko Pomorskie	</td><td>PL</td></tr>
+    <tr><td>        3100148 </td><td>	Drawno	</td><td>PL</td></tr>
+    <tr><td>        3100162 </td><td>	Doruchow	</td><td>PL</td></tr>
+    <tr><td>        3100247 </td><td>	Dolice	</td><td>PL</td></tr>
+    <tr><td>        3100266 </td><td>	Dobrzyn nad Wisla	</td><td>PL</td></tr>
+    <tr><td>        3100280 </td><td>	Dobrzyca	</td><td>PL</td></tr>
+    <tr><td>        3100283 </td><td>	Dobrzen Wielki	</td><td>PL</td></tr>
+    <tr><td>        3100297 </td><td>	Dobrzany	</td><td>PL</td></tr>
+    <tr><td>        3100306 </td><td>	Dobroszyce	</td><td>PL</td></tr>
+    <tr><td>        3100342 </td><td>	Dobrodzien	</td><td>PL</td></tr>
+    <tr><td>        3100355 </td><td>	Dobre	</td><td>PL</td></tr>
+    <tr><td>        3100363 </td><td>	Dobra	</td><td>PL</td></tr>
+    <tr><td>        3100400 </td><td>	Dobiegniew	</td><td>PL</td></tr>
+    <tr><td>        3100421 </td><td>	Dlugoleka	</td><td>PL</td></tr>
+    <tr><td>        3100489 </td><td>	Debrzno	</td><td>PL</td></tr>
+    <tr><td>        3100553 </td><td>	Debnica Kaszubska	</td><td>PL</td></tr>
+    <tr><td>        3100677 </td><td>	Damaslawek	</td><td>PL</td></tr>
+    <tr><td>        3100880 </td><td>	Dabie	</td><td>PL</td></tr>
+    <tr><td>        3100891 </td><td>	Czyzowice	</td><td>PL</td></tr>
+    <tr><td>        3100936 </td><td>	Czlopa	</td><td>PL</td></tr>
+    <tr><td>        3100971 </td><td>	Czerwonak	</td><td>PL</td></tr>
+    <tr><td>        3100976 </td><td>	Czerwiensk	</td><td>PL</td></tr>
+    <tr><td>        3100984 </td><td>	Czersk	</td><td>PL</td></tr>
+    <tr><td>        3100994 </td><td>	Czernikowo	</td><td>PL</td></tr>
+    <tr><td>        3101006 </td><td>	Czerniejewo	</td><td>PL</td></tr>
+    <tr><td>        3101019 </td><td>	Czernica	</td><td>PL</td></tr>
+    <tr><td>        3101053 </td><td>	Czempin	</td><td>PL</td></tr>
+    <tr><td>        3101114 </td><td>	Czarny Dunajec	</td><td>PL</td></tr>
+    <tr><td>        3101117 </td><td>	Czarny Bor	</td><td>PL</td></tr>
+    <tr><td>        3101128 </td><td>	Czarnowasy	</td><td>PL</td></tr>
+    <tr><td>        3101145 </td><td>	Czarnkow	</td><td>PL</td></tr>
+    <tr><td>        3101161 </td><td>	Czarne	</td><td>PL</td></tr>
+    <tr><td>        3101198 </td><td>	Czarkow	</td><td>PL</td></tr>
+    <tr><td>        3101220 </td><td>	Czaniec	</td><td>PL</td></tr>
+    <tr><td>        3101255 </td><td>	Cybinka	</td><td>PL</td></tr>
+    <tr><td>        3101289 </td><td>	Cisiec	</td><td>PL</td></tr>
+    <tr><td>        3101415 </td><td>	Ciecina	</td><td>PL</td></tr>
+    <tr><td>        3101426 </td><td>	Ciechocinek	</td><td>PL</td></tr>
+    <tr><td>        3101471 </td><td>	Chwaszczyno	</td><td>PL</td></tr>
+    <tr><td>        3101592 </td><td>	Chroscice	</td><td>PL</td></tr>
+    <tr><td>        3101689 </td><td>	Chodecz	</td><td>PL</td></tr>
+    <tr><td>        3101691 </td><td>	Chocznia	</td><td>PL</td></tr>
+    <tr><td>        3101697 </td><td>	Chociwel	</td><td>PL</td></tr>
+    <tr><td>        3101788 </td><td>	Chelm Slaski	</td><td>PL</td></tr>
+    <tr><td>        3101812 </td><td>	Chelmek	</td><td>PL</td></tr>
+    <tr><td>        3101976 </td><td>	Bystrzyca	</td><td>PL</td></tr>
+    <tr><td>        3101987 </td><td>	Bystra	</td><td>PL</td></tr>
+    <tr><td>        3101992 </td><td>	Bystra	</td><td>PL</td></tr>
+    <tr><td>        3102019 </td><td>	Byczyna	</td><td>PL</td></tr>
+    <tr><td>        3102058 </td><td>	Bulowice	</td><td>PL</td></tr>
+    <tr><td>        3102076 </td><td>	Bukowno	</td><td>PL</td></tr>
+    <tr><td>        3102138 </td><td>	Buk	</td><td>PL</td></tr>
+    <tr><td>        3102147 </td><td>	Bujakow	</td><td>PL</td></tr>
+    <tr><td>        3102162 </td><td>	Budzyn	</td><td>PL</td></tr>
+    <tr><td>        3102172 </td><td>	Budzow	</td><td>PL</td></tr>
+    <tr><td>        3102252 </td><td>	Buczkowice	</td><td>PL</td></tr>
+    <tr><td>        3102378 </td><td>	Brzeziny Slaskie	</td><td>PL</td></tr>
+    <tr><td>        3102409 </td><td>	Brzezinka	</td><td>PL</td></tr>
+    <tr><td>        3102447 </td><td>	Brzesc Kujawski	</td><td>PL</td></tr>
+    <tr><td>        3102488 </td><td>	Brusy	</td><td>PL</td></tr>
+    <tr><td>        3102616 </td><td>	Brody	</td><td>PL</td></tr>
+    <tr><td>        3102652 </td><td>	Brenna	</td><td>PL</td></tr>
+    <tr><td>        3102686 </td><td>	Bralin	</td><td>PL</td></tr>
+    <tr><td>        3102869 </td><td>	Boronow	</td><td>PL</td></tr>
+    <tr><td>        3102909 </td><td>	Borek Wielkopolski	</td><td>PL</td></tr>
+    <tr><td>        3102961 </td><td>	Bolszewo	</td><td>PL</td></tr>
+    <tr><td>        3102969 </td><td>	Bolkow	</td><td>PL</td></tr>
+    <tr><td>        3102992 </td><td>	Boleslaw	</td><td>PL</td></tr>
+    <tr><td>        3103004 </td><td>	Bojszowy	</td><td>PL</td></tr>
+    <tr><td>        3103009 </td><td>	Bojanowo	</td><td>PL</td></tr>
+    <tr><td>        3103015 </td><td>	Bojano	</td><td>PL</td></tr>
+    <tr><td>        3103154 </td><td>	Bobrowniki	</td><td>PL</td></tr>
+    <tr><td>        3103261 </td><td>	Blaszki	</td><td>PL</td></tr>
+    <tr><td>        3103274 </td><td>	Blachownia	</td><td>PL</td></tr>
+    <tr><td>        3103329 </td><td>	Biezun	</td><td>PL</td></tr>
+    <tr><td>        3103364 </td><td>	Bierutow	</td><td>PL</td></tr>
+    <tr><td>        3103391 </td><td>	Bienkowka	</td><td>PL</td></tr>
+    <tr><td>        3103411 </td><td>	Bielsk	</td><td>PL</td></tr>
+    <tr><td>        3103477 </td><td>	Bielany Wroclawskie	</td><td>PL</td></tr>
+    <tr><td>        3103545 </td><td>	Bialosliwie	</td><td>PL</td></tr>
+    <tr><td>        3103644 </td><td>	Biala	</td><td>PL</td></tr>
+    <tr><td>        3103645 </td><td>	Bialka	</td><td>PL</td></tr>
+    <tr><td>        3103656 </td><td>	Bestwina	</td><td>PL</td></tr>
+    <tr><td>        3103696 </td><td>	Belk	</td><td>PL</td></tr>
+    <tr><td>        3103780 </td><td>	Barwice	</td><td>PL</td></tr>
+    <tr><td>        3103824 </td><td>	Barlinek	</td><td>PL</td></tr>
+    <tr><td>        3103847 </td><td>	Bardo	</td><td>PL</td></tr>
+    <tr><td>        3103856 </td><td>	Barcin	</td><td>PL</td></tr>
+    <tr><td>        3103882 </td><td>	Banino	</td><td>PL</td></tr>
+    <tr><td>        3103884 </td><td>	Banie	</td><td>PL</td></tr>
+    <tr><td>        3103892 </td><td>	Balin	</td><td>PL</td></tr>
+    <tr><td>        3103971 </td><td>	Bachowice	</td><td>PL</td></tr>
+    <tr><td>        3103989 </td><td>	Baborow	</td><td>PL</td></tr>
+    <tr><td>        3104116 </td><td>	Andrespol	</td><td>PL</td></tr>
+    <tr><td>        3104127 </td><td>	Alwernia	</td><td>PL</td></tr>
+    <tr><td>        6565267 </td><td>	Kroscienko nad Dunajcem	</td><td>PL</td></tr>
+    <tr><td>        7302565 </td><td>	Rzgow	</td><td>PL</td></tr>
+    <tr><td>        7534282 </td><td>	Zarki-Letnisko	</td><td>PL</td></tr>
+    <tr><td>        7534548 </td><td>	Biskupiec	</td><td>PL</td></tr>
+    <tr><td>        7534560 </td><td>	Ilowo -Osada	</td><td>PL</td></tr>
+    <tr><td>        7534583 </td><td>	Koszyce Wielkie	</td><td>PL</td></tr>
+    <tr><td>        7534656 </td><td>	Radwanice	</td><td>PL</td></tr>
+    <tr><td>        7535492 </td><td>	Lubicz Dolny	</td><td>PL</td></tr>
+    <tr><td>        7535493 </td><td>	Lubicz Gorny	</td><td>PL</td></tr>
+    <tr><td>        7535582 </td><td>	Izabelin	</td><td>PL</td></tr>
+    <tr><td>        7535672 </td><td>	Letownia	</td><td>PL</td></tr>
+    <tr><td>        7535972 </td><td>	Wilczyce	</td><td>PL</td></tr>
+    <tr><td>        7576105 </td><td>	Belzec	</td><td>PL</td></tr>
+    <tr><td>        7576424 </td><td>	Radwanice	</td><td>PL</td></tr>
+    </tbody>
+</table>
+    
 </div>
 
 </body>
 </html>
+
+
+
