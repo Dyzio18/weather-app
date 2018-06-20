@@ -45,6 +45,11 @@ public class CityController {
     @RequestMapping("city/{id}")
     public String showCity(@PathVariable Integer id, Model model) {
         model.addAttribute("city", cityService.getCityById(id));
+
+        City myCity = new City();
+        myCity = cityService.getCityById(id);
+        System.out.println(myCity.getCityName());
+
         return "cityshow";
     }
 

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
 
-    <title>Spring Boot Exemple</title>
+    <title>Weather app - miasta</title>
 
     <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
 </head>
@@ -12,25 +12,25 @@
 
 <div class="container">
     <div th:if="${not #lists.isEmpty(cities)}">
-        <h2>Product List</h2>
+        <h2>Lista zapisanych miast</h2>
         <table class="table table-striped">
             <tr>
                 <th>#</th>
                 <th>City Id</th>
                 <th>City</th>
-                <th>Country</th>
-                <th>View</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>Kraj</th>
+                <th>Widok</th>
+                <th>#</th>
+                <th>#</th>
             </tr>
             <tr th:each="city : ${cities}">
                 <td th:text="${city.getId()}"><a href="/city/${city.id}"></a></td>
                 <td th:text="${city.getCityId()}"> </td>
                 <td th:text="${city.getCityName()}"> </td>
                 <td th:text="${city.getCountryCode()}"> </td>
-                <td><a th:href="${ '/city/' + city.id}">View</a></td>
-                <td><a th:href="${'/city/edit/' + city.id}">Edit</a></td>
-                <td><a th:href="${'/city/delete/' + city.id}">Delete</a></td>
+                <td><a th:href="${ '/city/' + city.id}">Zobacz</a></td>
+                <!--<td><a th:href="${'/city/edit/' + city.id}">Edycja</a></td>-->
+                <td><a th:href="${'/city/delete/' + city.id}">Usuń</a></td>
             </tr>
         </table>
 

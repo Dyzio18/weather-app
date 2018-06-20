@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <title>Spring Boot Example</title>
+    <title>Weather app - strona główna</title>
     <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
 </head>
 <body>
@@ -9,6 +9,14 @@
 <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
 
 <div class="container">
+    <div th:if="${not #lists.isEmpty(cities)}">
+        <div class="cities__box">
+            <div  th:each="city : ${cities}"  class="city__box">
+                <div class="city__body" th:text="${city.getCityName()}"> </div>
+                <div class="card-body center"><a th:href="${ '/city/' + city.id}" class="btn btn-outline-secondary btn-sm ">Zobacz</a></div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
