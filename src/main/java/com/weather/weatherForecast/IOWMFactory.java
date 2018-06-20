@@ -1,4 +1,4 @@
-package com.weather.utils;
+package com.weather.weatherForecast;
 import net.aksingh.owmjapis.core.OWM;
 
 /**

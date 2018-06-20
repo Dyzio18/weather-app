@@ -1,17 +1,23 @@
-package com.weather.utils;
+package com.weather.weatherForecast;
 import net.aksingh.owmjapis.api.APIException;
 import net.aksingh.owmjapis.core.OWM;
 import net.aksingh.owmjapis.model.CurrentWeather;
 import net.aksingh.owmjapis.model.DailyWeatherForecast;
 
 /**
- * Interface for WeatherData object which is used to forecast weather.
+ * Implementation of WeatherData Interface.
+ * This class is used to forecast weather.
  * @version 1.0
+ * @see IWeatherData
  */
-public interface IWeatherData {
+public class WeatherData implements IWeatherData{
+    /**
+     * OpenWeatherMap API object for weather forecasting
+     */
+    private OWMFactory owmFactory = new OWMFactory();
 
     /**
-     * Supposed to be implemented in subclasses.
+     * Implementation of interface method.
      * This method is returning object with information about current weather in city served as parameter.
      *
      * @param cityName this parameter is String type object consisting name of the city for which weather is extracted
@@ -19,10 +25,14 @@ public interface IWeatherData {
      *
      * @throws APIException
      */
-    CurrentWeather weatherForCityWithName(String cityName) throws APIException;
+    @Override
+    public CurrentWeather weatherForCityWithName(String cityName) throws APIException
+    {
+        return owmFactory.create().currentWeatherByCityName(cityName);
+    }
 
     /**
-     * Supposed to be implemented in subclasses.
+     * Implementation of interface method.
      * This method is returning object with information about current weather in city in specified country.
      * Information about city and country is served in parameters.
      *
@@ -33,11 +43,15 @@ public interface IWeatherData {
      *
      * @throws APIException
      */
-    CurrentWeather weatherForCityWithNameAndCountryCode(String cityName, OWM.Country countryCode) throws APIException;
-
+    @Override
+    public CurrentWeather weatherForCityWithNameAndCountryCode(String cityName, OWM.Country countryCode)
+            throws APIException
+    {
+        return owmFactory.create().currentWeatherByCityName(cityName, countryCode);
+    }
 
     /**
-     * Supposed to be implemented in subclasses.
+     * Implementation of interface method.
      * This method is returning object with information about 5 or whatever day weather forecast in city served as parameter.
      *
      * @param cityName this parameter is String type object consisting name of the city for which weather is extracted
@@ -47,10 +61,15 @@ public interface IWeatherData {
      *
      * @throws APIException
      */
-    DailyWeatherForecast fiveDaysForecastForCityWithName(String cityName, int numberOfDays) throws APIException;
+    @Override
+    public DailyWeatherForecast fiveDaysForecastForCityWithName(String cityName, int numberOfDays)
+            throws APIException
+    {
+        return owmFactory.create().dailyWeatherForecastByCityName(cityName, numberOfDays);
+    }
 
     /**
-     * Supposed to be implemented in subclasses.
+     * Implementation of interface method.
      * This method is returning object with information about 5 or whatever day weather forecast in city in certain country
      * served as parameters.
      *
@@ -63,5 +82,12 @@ public interface IWeatherData {
      *
      * @throws APIException
      */
-    DailyWeatherForecast fiveDaysForecastForCityWithNameAndCountryCode(String cityName, int numberOfDays, OWM.Country countryCode) throws APIException;
+    @Override
+    public DailyWeatherForecast fiveDaysForecastForCityWithNameAndCountryCode(String cityName, int numberOfDays, OWM.Country countryCode)
+            throws APIException
+    {
+        return owmFactory.create().dailyWeatherForecastByCityName(cityName,countryCode, numberOfDays);
+    }
 }
+
+
